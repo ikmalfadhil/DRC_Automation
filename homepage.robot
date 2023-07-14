@@ -5,24 +5,37 @@ Library    SeleniumLibrary
 *** Variables ***
 
 # Header
-${logo}    //*[@id="dark"]/header/div/div/a/h6
+${logo}    //a[@href="https://crypthub.vercel.app/"]
 ${login}    //*[@class="nav-end"]/button
 ${login_popup}    //*[@class="wrapper"]/div
-${login_email}    //*[@class="wrapper"]/div/div/div[2]/form/div/div/div/input
-${login_password}    //*[@class="wrapper"]/div/div/div[2]/form/div[2]/div/div/input
 ${profile_icon}    //*[@class="nav-end"]/button/div
+
+# Profile Dropdown
+${logout_button}    //*[text()="Logout"]
+${profile_button}    //*[text()="Profile"]
+
+# Wallet
 ${wallet}    //*[@id="wallet"]
 ${deposit_dropdown}    //*[@role="listbox"]/button
 ${withdraw_dropdown}    //*[@role="listbox"]/button[2]
-${wallet_input}    //*[@class="wrapper"]/div/div/form/div/div/div/input
-${USD_opt}    //*[@id="menu-"]/div[3]/ul/li[1]
+${wallet_input}    //input[@inputmode="numeric"]
+${USD_opt}    //*[@role="listbox"]/li
+${deposit_button}    //*[@class="deposit-form"]/button
+${withdraw_button}    //*[@class="deposit-form"]/button
+
+# Login Pop-up
+${login_email}    //*[@name="email"]
+${login_password}    //*[@name="password"]
+${login_button}    //*[@class="mt-10 form"]/button
 
 # Successful Messages
-${successful_buy}    //*[@role="alert"]/div[2][text()="Buy order successful"]
-${successful_sell}    //*[@role="alert"]/div[2][text()="Sell order successful"]
-${successful_deposit}    //*[@role="alert"]/div[2][text()="Successfully deposited"]
-${successful_withdraw}    //*[@role="alert"]/div[2][text()="Successfully withdrawn"]
-${successful_reset}    //*[@role="alert"]/div[2][text()="Successfully reset password"]
+${successful_login}    //div[text()="Welcome ikmal"]
+${successful_logout}    //div[text()="Successfully Logout"]
+${successful_buy}    //div[text()="Buy order successful"]
+${successful_sell}    //div[text()="Sell order successful"]
+${successful_deposit}    //div[text()="Successfully deposited"]
+${successful_withdraw}    //div[text()="Successfully withdrawn"]
+${successful_reset}    //div[text()="Successfully reset password"]
 
 # Homepage Sidebar
 ${currency_dropdown}    //*[@class="mobile-hide"]
@@ -31,36 +44,29 @@ ${ETH_currency}    //*[@data-value="ETH"]
 ${buy_toggle}    //*[@class="buy-sell-toggle"]/button
 ${sell_toggle}    //*[@class="buy-sell-toggle"]/button[2]
 ${amount_input}    //*[@class="amount"]/div/div/input
+${buysell_button}    //*[@class="side-bar-input"]/button
 
 #Transaction History Tab
 ${transaction_history_tab}    //*[@id="vertical-tab-0"]
-${most_recent_buy}    //*[@class="MuiTableBody-root css-1xnox0e"]/tr[1]/td[2][text()="buy"]
-${most_recent_sell}    //*[@class="MuiTableBody-root css-1xnox0e"]/tr[1]/td[2][text()="sell"]
-${most_recent_BTC}    //*[@class="MuiTableBody-root css-1xnox0e"]/tr[1]/td[3][text()="BTC"]
-${most_recent_ETH}    //*[@class="MuiTableBody-root css-1xnox0e"]/tr[1]/td[3][text()="ETH"]
-${most_recent_txn_amt}    //*[@class="MuiTableBody-root css-1xnox0e"]/tr[1]/td[5][text()="10,000"]
-${most_recent_coin_amt}    //*[@class="MuiTableBody-root css-1xnox0e"]/tr[1]/td[4][text()="0.1"]
+${most_recent_buy}    //td[2][text()="buy"]
+${most_recent_sell}    //td[2][text()="sell"]
+${most_recent_BTC}    //td[3][text()="BTC"]
+${most_recent_ETH}    //td[3][text()="ETH"]
+${most_recent_txn_amt}    //td[5][text()="10,000"]
+${most_recent_coin_amt}    //td[4][text()="0.1"]
 
 # Wallet History Tab
 ${wallet_history_tab}    //*[@id="vertical-tab-1"]
-${most_recent_deposit}    //*[@class="MuiTableBody-root css-1xnox0e"]/tr[1]/td[2][text()="deposit"]
-${most_recent_withdraw}    //*[@class="MuiTableBody-root css-1xnox0e"]/tr[1]/td[2][text()="withdraw"]
-${most_recent_wallet_txn}    //*[@class="MuiTableBody-root css-1xnox0e"]/tr[1]/td[5][text()="10,000"]
+${most_recent_deposit}    //td[2][text()="deposit"]
+${most_recent_withdraw}    //td[2][text()="withdraw"]
+${most_recent_wallet_txn}     //td[5][text()="10,000"]
 
 # Reset Password Tab
 ${reset_password_tab}    //*[@id="vertical-tab-3"]
-${current_password}    //*[@class="mt-10 reset-password-form"]/div[1]/div/div/input
-${new_password}    //*[@class="mt-10 reset-password-form"]/div[2]/div/div/input
-${repeat_password}    //*[@class="mt-10 reset-password-form"]/div[3]/div/div/input
-${reset_button}    //*[@class="mt-10 reset-password-form"]/button
-
-# Buttons
-${login_button}    //*[@class="wrapper"]/div/div/div[2]/form/button
-${logout_button}    //*[@class="MuiPopover-root MuiMenu-root MuiModal-root css-1sucic7"]/div[3]/ul/li[2]
-${profile_button}    //*[@class="MuiPopover-root MuiMenu-root MuiModal-root css-1sucic7"]/div[3]/ul/li
-${deposit_button}    //*[@class="deposit-form"]/button
-${withdraw_button}    //*[@class="deposit-form"]/button
-${buysell_button}    //*[@class="side-bar-input"]/button
+${current_password}    //input[@name="old_password"]
+${new_password}    //input[@name="password"]
+${repeat_password}    //input[@name="new_password"]
+${reset_button}    //button[@type="submit"]
 
 
 *** Keywords ***
@@ -99,7 +105,7 @@ To Profile Page
     Click Element    ${profile_button}
 
 Deposit 10000 USD into Wallet
-    Wait Until Element Is Visible    ${wallet}
+    Wait Until Element Is Visible    ${wallet}    10
     Click Element    ${wallet}
     Wait Until Element Is Visible    ${deposit_dropdown}
     Click Element    ${deposit_dropdown}
@@ -152,12 +158,14 @@ Sell 0.1 BTC
 login 
     Go To Website
     Login with first password
+    Wait Until Element Is Visible    ${successful_login}
     Sleep    4
 
 logout
     Go To Website
     Login with first password
     Logout
+    Wait Until Element Is Visible    ${successful_logout}
     Sleep    4
 
 Reset Password

@@ -1,230 +1,230 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.10.6 on linux)" generated="20230714 22:49:04.178" rpa="false" schemaversion="3">
-<suite id="s1" name="Homepage" source="/home/ikmal/Desktop/DRCautomation/homepage.robot">
-<test id="s1-t1" name="Reset Password" line="163">
+<robot generator="Robot 6.0.2 (Python 3.10.6 on linux)" generated="20230715 00:51:59.396" rpa="false" schemaversion="3">
+<suite id="s1" name="Resetpassword" source="/home/ikmal/Desktop/DRCautomation/resetpassword.robot">
+<test id="s1-t1" name="Reset Password" line="110">
 <kw name="Go To Website">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>https://crypthub-app.vercel.app/</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230714 22:49:04.296" level="INFO">Opening browser 'chrome' to base url 'https://crypthub-app.vercel.app/'.</msg>
-<status status="PASS" starttime="20230714 22:49:04.295" endtime="20230714 22:49:06.543"/>
+<msg timestamp="20230715 00:51:59.564" level="INFO">Opening browser 'chrome' to base url 'https://crypthub-app.vercel.app/'.</msg>
+<status status="PASS" starttime="20230715 00:51:59.564" endtime="20230715 00:52:01.679"/>
 </kw>
 <kw name="Set Window Size" library="SeleniumLibrary">
 <arg>1280</arg>
 <arg>1024</arg>
 <doc>Sets current windows size to given ``width`` and ``height``.</doc>
-<status status="PASS" starttime="20230714 22:49:06.543" endtime="20230714 22:49:06.660"/>
+<status status="PASS" starttime="20230715 00:52:01.680" endtime="20230715 00:52:01.811"/>
 </kw>
-<status status="PASS" starttime="20230714 22:49:04.295" endtime="20230714 22:49:06.660"/>
+<status status="PASS" starttime="20230715 00:51:59.563" endtime="20230715 00:52:01.812"/>
 </kw>
 <kw name="Login with first password">
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>${logo}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20230714 22:49:06.662" endtime="20230714 22:49:06.678"/>
+<status status="PASS" starttime="20230715 00:52:01.815" endtime="20230715 00:52:01.847"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${logo}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230714 22:49:06.678" endtime="20230714 22:49:06.706"/>
+<status status="PASS" starttime="20230715 00:52:01.850" endtime="20230715 00:52:01.898"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${login}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230714 22:49:06.707" level="INFO">Clicking element '//*[@class="nav-end"]/button'.</msg>
-<status status="PASS" starttime="20230714 22:49:06.707" endtime="20230714 22:49:06.807"/>
+<msg timestamp="20230715 00:52:01.901" level="INFO">Clicking element '//*[@class="nav-end"]/button'.</msg>
+<status status="PASS" starttime="20230715 00:52:01.899" endtime="20230715 00:52:02.032"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${login_popup}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230714 22:49:06.807" endtime="20230714 22:49:06.843"/>
+<status status="PASS" starttime="20230715 00:52:02.033" endtime="20230715 00:52:02.074"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${login_email}</arg>
 <arg>ikmal@besquare.com.my</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230714 22:49:06.845" level="INFO">Typing text 'ikmal@besquare.com.my' into text field '//*[@class="wrapper"]/div/div/div[2]/form/div/div/div/input'.</msg>
-<status status="PASS" starttime="20230714 22:49:06.844" endtime="20230714 22:49:06.990"/>
+<msg timestamp="20230715 00:52:02.075" level="INFO">Typing text 'ikmal@besquare.com.my' into text field '//*[@name="email"]'.</msg>
+<status status="PASS" starttime="20230715 00:52:02.075" endtime="20230715 00:52:02.208"/>
 </kw>
 <kw name="Input Password" library="SeleniumLibrary">
 <arg>${login_password}</arg>
 <arg>Ikmal12!</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20230714 22:49:06.992" level="INFO">Typing password into text field '//*[@class="wrapper"]/div/div/div[2]/form/div[2]/div/div/input'.</msg>
-<msg timestamp="20230714 22:49:07.039" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20230714 22:49:07.102" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20230714 22:49:06.991" endtime="20230714 22:49:07.103"/>
+<msg timestamp="20230715 00:52:02.209" level="INFO">Typing password into text field '//*[@name="password"]'.</msg>
+<msg timestamp="20230715 00:52:02.257" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230715 00:52:02.318" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230715 00:52:02.208" endtime="20230715 00:52:02.318"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${login_button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230714 22:49:07.105" level="INFO">Clicking element '//*[@class="wrapper"]/div/div/div[2]/form/button'.</msg>
-<status status="PASS" starttime="20230714 22:49:07.104" endtime="20230714 22:49:07.178"/>
+<msg timestamp="20230715 00:52:02.319" level="INFO">Clicking element '//*[@class="mt-10 form"]/button'.</msg>
+<status status="PASS" starttime="20230715 00:52:02.318" endtime="20230715 00:52:02.374"/>
 </kw>
-<status status="PASS" starttime="20230714 22:49:06.661" endtime="20230714 22:49:07.178"/>
+<status status="PASS" starttime="20230715 00:52:01.813" endtime="20230715 00:52:02.375"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230714 22:49:10.180" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230714 22:49:07.179" endtime="20230714 22:49:10.180"/>
+<msg timestamp="20230715 00:52:05.376" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230715 00:52:02.375" endtime="20230715 00:52:05.376"/>
 </kw>
 <kw name="To Profile Page">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${profile_icon}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230714 22:49:10.183" level="INFO">Clicking element '//*[@class="nav-end"]/button/div'.</msg>
-<status status="PASS" starttime="20230714 22:49:10.182" endtime="20230714 22:49:10.253"/>
+<msg timestamp="20230715 00:52:05.384" level="INFO">Clicking element '//*[@class="nav-end"]/button/div'.</msg>
+<status status="PASS" starttime="20230715 00:52:05.380" endtime="20230715 00:52:05.776"/>
 </kw>
 <kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
 <arg>${profile_button}</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20230714 22:49:10.253" endtime="20230714 22:49:10.288"/>
+<status status="PASS" starttime="20230715 00:52:05.777" endtime="20230715 00:52:05.882"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${profile_button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230714 22:49:10.288" level="INFO">Clicking element '//*[@class="MuiPopover-root MuiMenu-root MuiModal-root css-1sucic7"]/div[3]/ul/li'.</msg>
-<status status="PASS" starttime="20230714 22:49:10.288" endtime="20230714 22:49:10.437"/>
+<msg timestamp="20230715 00:52:05.885" level="INFO">Clicking element '//*[text()="Profile"]'.</msg>
+<status status="PASS" starttime="20230715 00:52:05.883" endtime="20230715 00:52:06.152"/>
 </kw>
-<status status="PASS" starttime="20230714 22:49:10.181" endtime="20230714 22:49:10.437"/>
+<status status="PASS" starttime="20230715 00:52:05.378" endtime="20230715 00:52:06.153"/>
 </kw>
 <kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
 <arg>${reset_password_tab}</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20230714 22:49:10.437" endtime="20230714 22:49:10.471"/>
+<status status="PASS" starttime="20230715 00:52:06.154" endtime="20230715 00:52:06.273"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${reset_password_tab}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230714 22:49:10.472" level="INFO">Clicking element '//*[@id="vertical-tab-3"]'.</msg>
-<status status="PASS" starttime="20230714 22:49:10.472" endtime="20230714 22:49:10.756"/>
+<msg timestamp="20230715 00:52:06.274" level="INFO">Clicking element '//*[@id="vertical-tab-3"]'.</msg>
+<status status="PASS" starttime="20230715 00:52:06.273" endtime="20230715 00:52:06.395"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>${current_password}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20230714 22:49:10.757" endtime="20230714 22:49:10.774"/>
+<status status="PASS" starttime="20230715 00:52:06.397" endtime="20230715 00:52:06.409"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${current_password}</arg>
 <arg>Ikmal12!</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230714 22:49:10.776" level="INFO">Typing text 'Ikmal12!' into text field '//*[@class="mt-10 reset-password-form"]/div[1]/div/div/input'.</msg>
-<status status="PASS" starttime="20230714 22:49:10.775" endtime="20230714 22:49:10.860"/>
+<msg timestamp="20230715 00:52:06.413" level="INFO">Typing text 'Ikmal12!' into text field '//input[@name="old_password"]'.</msg>
+<status status="PASS" starttime="20230715 00:52:06.411" endtime="20230715 00:52:06.492"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${new_password}</arg>
 <arg>Lamki12!</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230714 22:49:10.863" level="INFO">Typing text 'Lamki12!' into text field '//*[@class="mt-10 reset-password-form"]/div[2]/div/div/input'.</msg>
-<status status="PASS" starttime="20230714 22:49:10.861" endtime="20230714 22:49:10.945"/>
+<msg timestamp="20230715 00:52:06.493" level="INFO">Typing text 'Lamki12!' into text field '//input[@name="password"]'.</msg>
+<status status="PASS" starttime="20230715 00:52:06.492" endtime="20230715 00:52:06.592"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${repeat_password}</arg>
 <arg>Lamki12!</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230714 22:49:10.948" level="INFO">Typing text 'Lamki12!' into text field '//*[@class="mt-10 reset-password-form"]/div[3]/div/div/input'.</msg>
-<status status="PASS" starttime="20230714 22:49:10.946" endtime="20230714 22:49:11.037"/>
+<msg timestamp="20230715 00:52:06.595" level="INFO">Typing text 'Lamki12!' into text field '//input[@name="new_password"]'.</msg>
+<status status="PASS" starttime="20230715 00:52:06.593" endtime="20230715 00:52:06.731"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${reset_button}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230714 22:49:11.039" level="INFO">Clicking button '//*[@class="mt-10 reset-password-form"]/button'.</msg>
-<status status="PASS" starttime="20230714 22:49:11.038" endtime="20230714 22:49:11.119"/>
+<msg timestamp="20230715 00:52:06.735" level="INFO">Clicking button '//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20230715 00:52:06.733" endtime="20230715 00:52:06.945"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${successful_reset}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230714 22:49:11.120" endtime="20230714 22:49:11.574"/>
+<status status="PASS" starttime="20230715 00:52:06.951" endtime="20230715 00:52:07.445"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230714 22:49:14.575" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230714 22:49:11.575" endtime="20230714 22:49:14.576"/>
+<msg timestamp="20230715 00:52:10.447" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230715 00:52:07.446" endtime="20230715 00:52:10.448"/>
 </kw>
 <kw name="Logout">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${profile_icon}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230714 22:49:14.580" endtime="20230714 22:49:14.607"/>
+<status status="PASS" starttime="20230715 00:52:10.451" endtime="20230715 00:52:10.481"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${profile_icon}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230714 22:49:14.609" level="INFO">Clicking element '//*[@class="nav-end"]/button/div'.</msg>
-<status status="PASS" starttime="20230714 22:49:14.608" endtime="20230714 22:49:14.650"/>
+<msg timestamp="20230715 00:52:10.485" level="INFO">Clicking element '//*[@class="nav-end"]/button/div'.</msg>
+<status status="PASS" starttime="20230715 00:52:10.483" endtime="20230715 00:52:10.574"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${logout_button}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230714 22:49:14.651" endtime="20230714 22:49:14.670"/>
+<status status="PASS" starttime="20230715 00:52:10.575" endtime="20230715 00:52:10.614"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${logout_button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230714 22:49:14.671" level="INFO">Clicking element '//*[@class="MuiPopover-root MuiMenu-root MuiModal-root css-1sucic7"]/div[3]/ul/li[2]'.</msg>
-<status status="PASS" starttime="20230714 22:49:14.670" endtime="20230714 22:49:14.713"/>
+<msg timestamp="20230715 00:52:10.617" level="INFO">Clicking element '//*[text()="Logout"]'.</msg>
+<status status="PASS" starttime="20230715 00:52:10.615" endtime="20230715 00:52:10.679"/>
 </kw>
-<status status="PASS" starttime="20230714 22:49:14.578" endtime="20230714 22:49:14.713"/>
+<status status="PASS" starttime="20230715 00:52:10.450" endtime="20230715 00:52:10.681"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230714 22:49:17.715" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230714 22:49:14.714" endtime="20230714 22:49:17.716"/>
+<msg timestamp="20230715 00:52:13.683" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230715 00:52:10.682" endtime="20230715 00:52:13.684"/>
 </kw>
 <kw name="Login with second password">
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>${logo}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20230714 22:49:17.718" endtime="20230714 22:49:17.733"/>
+<status status="PASS" starttime="20230715 00:52:13.686" endtime="20230715 00:52:13.708"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${logo}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230714 22:49:17.733" endtime="20230714 22:49:17.752"/>
+<status status="PASS" starttime="20230715 00:52:13.709" endtime="20230715 00:52:13.766"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${login}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230714 22:49:17.753" level="INFO">Clicking element '//*[@class="nav-end"]/button'.</msg>
-<status status="PASS" starttime="20230714 22:49:17.752" endtime="20230714 22:49:17.807"/>
+<msg timestamp="20230715 00:52:13.767" level="INFO">Clicking element '//*[@class="nav-end"]/button'.</msg>
+<status status="PASS" starttime="20230715 00:52:13.767" endtime="20230715 00:52:14.004"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${login_popup}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230714 22:49:17.808" endtime="20230714 22:49:17.828"/>
+<status status="PASS" starttime="20230715 00:52:14.006" endtime="20230715 00:52:14.102"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${login_email}</arg>
 <arg>ikmal@besquare.com.my</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230714 22:49:17.829" level="INFO">Typing text 'ikmal@besquare.com.my' into text field '//*[@class="wrapper"]/div/div/div[2]/form/div/div/div/input'.</msg>
-<status status="PASS" starttime="20230714 22:49:17.829" endtime="20230714 22:49:17.951"/>
+<msg timestamp="20230715 00:52:14.107" level="INFO">Typing text 'ikmal@besquare.com.my' into text field '//*[@name="email"]'.</msg>
+<status status="PASS" starttime="20230715 00:52:14.104" endtime="20230715 00:52:14.376"/>
 </kw>
 <kw name="Input Password" library="SeleniumLibrary">
 <arg>${login_password}</arg>
 <arg>Lamki12!</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20230714 22:49:17.951" level="INFO">Typing password into text field '//*[@class="wrapper"]/div/div/div[2]/form/div[2]/div/div/input'.</msg>
-<msg timestamp="20230714 22:49:17.997" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20230714 22:49:18.053" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20230714 22:49:17.951" endtime="20230714 22:49:18.053"/>
+<msg timestamp="20230715 00:52:14.380" level="INFO">Typing password into text field '//*[@name="password"]'.</msg>
+<msg timestamp="20230715 00:52:14.452" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230715 00:52:14.596" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230715 00:52:14.376" endtime="20230715 00:52:14.597"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${login_button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230714 22:49:18.053" level="INFO">Clicking element '//*[@class="wrapper"]/div/div/div[2]/form/button'.</msg>
-<status status="PASS" starttime="20230714 22:49:18.053" endtime="20230714 22:49:18.127"/>
+<msg timestamp="20230715 00:52:14.600" level="INFO">Clicking element '//*[@class="mt-10 form"]/button'.</msg>
+<status status="PASS" starttime="20230715 00:52:14.598" endtime="20230715 00:52:14.699"/>
 </kw>
-<status status="PASS" starttime="20230714 22:49:17.717" endtime="20230714 22:49:18.127"/>
+<status status="PASS" starttime="20230715 00:52:13.685" endtime="20230715 00:52:14.700"/>
 </kw>
-<status status="PASS" starttime="20230714 22:49:04.294" endtime="20230714 22:49:18.128"/>
+<status status="PASS" starttime="20230715 00:51:59.562" endtime="20230715 00:52:14.702"/>
 </test>
 <doc>homepage</doc>
-<status status="PASS" starttime="20230714 22:49:04.180" endtime="20230714 22:49:18.129"/>
+<status status="PASS" starttime="20230715 00:51:59.401" endtime="20230715 00:52:14.708"/>
 </suite>
 <statistics>
 <total>
@@ -233,7 +233,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Homepage">Homepage</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Resetpassword">Resetpassword</stat>
 </suite>
 </statistics>
 <errors>
