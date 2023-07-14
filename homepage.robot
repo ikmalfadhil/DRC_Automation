@@ -29,6 +29,7 @@ ${most_recent_sell}    //*[@class="MuiTableBody-root css-1xnox0e"]/tr[1]/td[2][t
 ${most_recent_BTC}    //*[@class="MuiTableBody-root css-1xnox0e"]/tr[1]/td[3][text()="BTC"]
 ${most_recent_ETH}    //*[@class="MuiTableBody-root css-1xnox0e"]/tr[1]/td[3][text()="ETH"]
 ${most_recent_txn_amt}    //*[@class="MuiTableBody-root css-1xnox0e"]/tr[1]/td[5][text()="10,000"]
+${most_recent_coin_amt}    //*[@class="MuiTableBody-root css-1xnox0e"]/tr[1]/td[4][text()="0.1"]
 
 
 ${wallet_history_tab}    //*[@id="vertical-tab-1"]
@@ -95,6 +96,31 @@ Withdraw 10000 USD out of Wallet
     Wait Until Element Is Enabled    ${wallet}
     Click Element    ${USD_opt}
 
+Buy 10000 USD worth of BTC
+    Wait Until Page Contains Element    ${currency_dropdown}
+    Click Element    ${currency_dropdown}
+    Wait Until Element Is Visible    ${BTC_currency}
+    Click Element    ${BTC_currency}
+    Click Element    ${buy_toggle}
+    Input Text    ${amount_input}    10000
+    Sleep    4
+    Wait Until Element Is Enabled    ${buysell_button}
+    Click Element    ${buysell_button}
+    Wait Until Element Is Visible    ${successful_message}
+
+Sell 0.1 BTC
+    Wait Until Page Contains Element    ${currency_dropdown}
+    Click Element    ${currency_dropdown}
+    Wait Until Element Is Visible    ${BTC_currency}
+    Click Element    ${BTC_currency}
+    Click Element    ${sell_toggle}
+    Input Text    ${amount_input}    0.1
+    Sleep    4
+    Wait Until Element Is Enabled    ${buysell_button}
+    Click Element    ${buysell_button}
+    Wait Until Element Is Visible    ${successful_message}
+
+
 *** Test Cases ***
 
 login 
@@ -112,6 +138,7 @@ Deposit 10000 USD into Wallet and Check Wallet History
     Go To Website
     Login
     Deposit 10000 USD into Wallet
+    Buy 10000 USD worth of BTC
     To Profile Page
     Wait Until Element Is Enabled   ${wallet_history_tab}
     Click Element    ${wallet_history_tab}
@@ -130,26 +157,31 @@ Withdraw 10000 USD into Wallet and Check Wallet History
     Wait Until Element Is Visible    ${most_recent_wallet_txn}    10
     Sleep    4
 
-Buy 1000 USD worth of BTC and Check Transaction History
+Buy 10000 USD worth of BTC and Check Transaction History
     Go To Website
     Login
     Deposit 10000 USD into Wallet
-    Wait Until Page Contains Element    ${currency_dropdown}
-    Click Element    ${currency_dropdown}
-    Wait Until Element Is Visible    ${BTC_currency}
-    Click Element    ${BTC_currency}
-    Click Element    ${buy_toggle}
-    Input Text    ${amount_input}    10000
-    Sleep    4
-    Wait Until Element Is Enabled    ${buysell_button}
-    Click Element    ${buysell_button}
-    Wait Until Element Is Visible    ${successful_message}
+    Buy 10000 USD worth of BTC
     To Profile Page
     Wait Until Element Is Visible    ${transaction_history_tab}
     Click Element    ${transaction_history_tab}
     Wait Until Element Is Visible    ${most_recent_buy}    10
     Wait Until Element Is Visible    ${most_recent_BTC}    10
     Wait Until Element Is Visible    ${most_recent_txn_amt}    10
+    Sleep   4
+
+Sell 0.1 BTC and Check Transaction History
+    Go To Website
+    Login
+    Deposit 10000 USD into Wallet
+    Buy 10000 USD worth of BTC
+    Sell 0.1 BTC
+    To Profile Page
+    Wait Until Element Is Visible    ${transaction_history_tab}
+    Click Element    ${transaction_history_tab}
+    Wait Until Element Is Visible    ${most_recent_sell}    10
+    Wait Until Element Is Visible    ${most_recent_BTC}    10
+    Wait Until Element Is Visible    ${most_recent_coin_amt}    10
     Sleep   4
 
 # Test 1
