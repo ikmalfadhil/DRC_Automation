@@ -70,7 +70,18 @@ ${reset_button}    //button[@type="submit"]
 
 # To Skip Tour
 ${skip_tour}    //button[text()="Skip"]
-
+${next_tour}    //button[text()="Yes"]
+${next1}    //a[@role="button"][text()="Next"]
+${next2}    //a[@role="button"][text()="Next"]
+${next3}    //a[@role="button"][text()="Next"]
+${next4}    //a[@role="button"][text()="Next"]
+${next5}    //a[@role="button"][text()="Next"]
+${next6}    //a[@role="button"][text()="Next"]
+${next7}    //a[@role="button"][text()="Done"]
+${next1_p2p}    //a[@role="button"][text()="Next"]
+${next2_p2p}    //a[@role="button"][text()="Next"]
+${next3_p2p}    //a[@role="button"][text()="Next"]
+${next4_p2p}    //a[@role="button"][text()="Done"]
 
 *** Keywords ***
 
@@ -87,7 +98,6 @@ Login with first password
     Input Password    ${login_password}    Ikmal12!
     Click Element    ${login_button}
     Wait Until Element Is Visible    ${successful_login}
-    Click Element    ${skip_tour}
 
 Login with second password
     Wait Until Page Contains Element    ${logo}
@@ -111,117 +121,44 @@ To Profile Page
     Wait Until Element Is Enabled    ${profile_button}
     Click Element    ${profile_button}
 
-Deposit 10000 USD into Wallet
-    Wait Until Element Is Visible    ${wallet}    10
-    Click Element    ${wallet}
-    Wait Until Element Is Visible    ${deposit_dropdown}
-    Click Element    ${deposit_dropdown}
-    Wait Until Element Is Visible    ${wallet_input}
-    Input Text    ${wallet_input}    10000
-    Click Element    ${deposit_button}
-    Wait Until Page Contains Element    ${successful_deposit}
-    Wait Until Element Is Enabled    ${wallet}
-    Click Element    ${USD_opt}
-
-Withdraw 10000 USD out of Wallet
-    Wait Until Element Is Visible    ${wallet}
-    Click Element    ${wallet}
-    Wait Until Element Is Visible    ${withdraw_dropdown}
-    Click Element    ${withdraw_dropdown}
-    Wait Until Element Is Visible    ${wallet_input}
-    Input Text    ${wallet_input}    10000
-    Click Element    ${withdraw_button}
-    Wait Until Element Is Visible    ${successful_withdraw}
-    Wait Until Element Is Enabled    ${wallet}
-    Click Element    ${USD_opt}
-
-Buy 10000 USD worth of BTC
-    Wait Until Page Contains Element    ${currency_dropdown}
-    Click Element    ${currency_dropdown}
-    Wait Until Element Is Visible    ${BTC_currency}
-    Click Element    ${BTC_currency}
-    Click Element    ${buy_toggle}
-    Input Text    ${amount_input}    10000
-    Sleep    4
-    Wait Until Element Is Enabled    ${buysell_button}
-    Click Element    ${buysell_button}
-    Wait Until Element Is Visible    ${successful_buy}
-
-Sell 0.1 BTC
-    Wait Until Page Contains Element    ${currency_dropdown}
-    Click Element    ${currency_dropdown}
-    Wait Until Element Is Visible    ${BTC_currency}
-    Click Element    ${BTC_currency}
-    Click Element    ${sell_toggle}
-    Input Text    ${amount_input}    0.1
-    Sleep    4
-    Wait Until Element Is Enabled    ${buysell_button}
-    Click Element    ${buysell_button}
-    Wait Until Element Is Visible    ${successful_sell}
-
 
 *** Test Cases ***
 
-login 
+Tour Guide
     Go To Website
     Login with first password
-    Wait Until Element Is Visible    ${successful_login}
-    Sleep    4
-
-logout
-    Go To Website
-    Login with first password
-    Logout
-    Wait Until Element Is Visible    ${successful_logout}
-    Sleep    4
-
-Deposit 10000 USD into Wallet and Check Wallet History
-    Go To Website
-    Login with first password
-    Deposit 10000 USD into Wallet
-    To Profile Page
-    Wait Until Element Is Enabled   ${wallet_history_tab}
-    Click Element    ${wallet_history_tab}
-    Wait Until Element Is Visible    ${first_row_deposit}
-    Wait Until Element Is Visible    ${first_row_wallet_txn}
-    Sleep    4
-
-Withdraw 10000 USD into Wallet and Check Wallet History
-    Go To Website
-    Login with first password
-    Withdraw 10000 USD out of Wallet
-    To Profile Page
-    Wait Until Element Is Enabled    ${wallet_history_tab}
-    Click Element    ${wallet_history_tab}
-    Wait Until Element Is Visible    ${first_row_withdraw}    10
-    Wait Until Element Is Visible    ${first_row_wallet_txn}    10
-    Sleep    4
-
-Buy 10000 USD worth of BTC and Check Transaction History
-    Go To Website
-    Login with first password
-    Deposit 10000 USD into Wallet
-    Buy 10000 USD worth of BTC
-    To Profile Page
-    Wait Until Element Is Visible    ${transaction_history_tab}
-    Click Element    ${transaction_history_tab}
-    Wait Until Element Is Visible    ${first_row_buy}    10
-    Wait Until Element Is Visible    ${first_row_BTC}    10
-    Wait Until Element Is Visible    ${first_row_txn_amt}    10
-    Sleep   4
-
-Sell 0.1 BTC and Check Transaction History
-    Go To Website
-    Login with first password
-    Deposit 10000 USD into Wallet
-    Buy 10000 USD worth of BTC
-    Sell 0.1 BTC
-    To Profile Page
-    Wait Until Element Is Visible    ${transaction_history_tab}
-    Click Element    ${transaction_history_tab}
-    Wait Until Element Is Visible    ${first_row_sell}    10
-    Wait Until Element Is Visible    ${first_row_BTC}    10
-    Wait Until Element Is Visible    ${first_row_coin_amt}    10
-    Sleep   4
-
-
+    Wait Until Page Contains Element    ${next_tour}
+    Click Element    ${next_tour}
+    Wait Until Element Is Enabled    ${next1}
+    Click Element    ${next1}
+    Sleep    1
+    Wait Until Element Is Enabled    ${next2}
+    Click Element    ${next2}
+    Sleep    1
+    Wait Until Element Is Enabled    ${next3}
+    Click Element    ${next3}
+    Sleep    1
+    Wait Until Element Is Enabled    ${next4}
+    Click Element    ${next4}
+    Sleep    1
+    Wait Until Element Is Enabled    ${next5}
+    Click Element    ${next5}
+    Sleep    1
+    Wait Until Element Is Enabled    ${next6}
+    Click Element    ${next6}
+    Sleep    1
+    Wait Until Element Is Enabled    ${next7}
+    Click Element    ${next7}
+    Sleep    1
+    Wait Until Element Is Enabled    ${next1_p2p}
+    Click Element    ${next1_p2p}
+    Sleep    1
+    Wait Until Element Is Enabled    ${next2_p2p}
+    Click Element    ${next2_p2p}
+    Sleep    1
+    Wait Until Element Is Enabled    ${next3_p2p}
+    Click Element    ${next3_p2p}
+    Sleep    1
+    Wait Until Element Is Enabled    ${next4_p2p}
+    Click Element    ${next4_p2p}
+    Sleep    1

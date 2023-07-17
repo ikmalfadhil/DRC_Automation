@@ -14,15 +14,6 @@ ${profile_icon}    //*[@class="nav-end"]/button/div
 ${logout_button}    //*[text()="Logout"]
 ${profile_button}    //*[text()="Profile"]
 
-# Wallet
-${wallet}    //*[@id="wallet"]
-${deposit_dropdown}    //*[@role="listbox"]/button
-${withdraw_dropdown}    //*[@role="listbox"]/button[2]
-${wallet_input}    //input[@inputmode="numeric"]
-${USD_opt}    //*[@role="listbox"]/li
-${deposit_button}    //*[@class="deposit-form"]/button
-${withdraw_button}    //*[@class="deposit-form"]/button
-
 # Login Pop-up
 ${login_email}    //*[@name="email"]
 ${login_password}    //*[@name="password"]
@@ -46,21 +37,6 @@ ${sell_toggle}    //*[@class="buy-sell-toggle"]/button[2]
 ${amount_input}    //*[@class="amount"]/div/div/input
 ${buysell_button}    //*[@class="side-bar-input"]/button
 
-#Transaction History Tab
-${transaction_history_tab}    //*[@id="vertical-tab-0"]
-${most_recent_buy}    //td[2][text()="buy"]
-${most_recent_sell}    //td[2][text()="sell"]
-${most_recent_BTC}    //td[3][text()="BTC"]
-${most_recent_ETH}    //td[3][text()="ETH"]
-${most_recent_txn_amt}    //td[5][text()="10,000"]
-${most_recent_coin_amt}    //td[4][text()="0.1"]
-
-# Wallet History Tab
-${wallet_history_tab}    //*[@id="vertical-tab-1"]
-${most_recent_deposit}    //td[2][text()="deposit"]
-${most_recent_withdraw}    //td[2][text()="withdraw"]
-${most_recent_wallet_txn}     //td[5][text()="10,000"]
-
 # Reset Password Tab
 ${reset_password_tab}    //*[@id="vertical-tab-3"]
 ${current_password}    //input[@name="old_password"]
@@ -68,6 +44,7 @@ ${new_password}    //input[@name="password"]
 ${repeat_password}    //input[@name="new_password"]
 ${reset_button}    //button[@type="submit"]
 
+${skip_tour}    //button[text()="Skip"]
 
 *** Keywords ***
 
@@ -111,6 +88,7 @@ Reset Password
     Go To Website
     Login with first password
     Sleep    3
+    Click Element    ${skip_tour}
     To Profile Page
     Wait Until Element Is Enabled    ${reset_password_tab}
     Click Element    ${reset_password_tab}
