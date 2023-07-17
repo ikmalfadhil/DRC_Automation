@@ -1,13 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.10.6 on linux)" generated="20230713 17:30:57.117" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.2 (Python 3.10.6 on linux)" generated="20230717 12:32:41.000" rpa="false" schemaversion="3">
 <suite id="s1" name="Robot Interactive Console" source="/home/ikmal/.vscode/extensions/robocorp.robotframework-lsp-1.11.0/src/robotframework_ls/vendored/robotframework_interactive/robot_interactive_console.robot">
 <test id="s1-t1" name="Default Task/Test" line="5">
 <kw name="Interpreter Main Loop" library="MainLoop">
-<status status="PASS" starttime="20230713 17:30:57.130" endtime="20230713 17:30:59.483"/>
+<kw name="Go To Website">
+<msg timestamp="20230717 12:32:41.802" level="FAIL">No keyword with name 'Go To Website' found.</msg>
+<status status="FAIL" starttime="20230717 12:32:41.802" endtime="20230717 12:32:41.802"/>
 </kw>
-<status status="PASS" starttime="20230713 17:30:57.129" endtime="20230713 17:30:59.484"/>
+<kw name="Login with first password">
+<status status="NOT RUN" starttime="20230717 12:32:41.803" endtime="20230717 12:32:41.804"/>
+</kw>
+<kw name="Logout">
+<status status="NOT RUN" starttime="20230717 12:32:41.804" endtime="20230717 12:32:41.805"/>
+</kw>
+<kw name="Wait Until Element Is Visible">
+<arg>${successful_logout}</arg>
+<status status="NOT RUN" starttime="20230717 12:32:41.806" endtime="20230717 12:32:41.806"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20230717 12:32:41.806" endtime="20230717 12:32:41.806"/>
+</kw>
+<status status="PASS" starttime="20230717 12:32:41.017" endtime="20230717 12:32:44.876"/>
+</kw>
+<status status="PASS" starttime="20230717 12:32:41.016" endtime="20230717 12:32:44.877"/>
 </test>
-<status status="PASS" starttime="20230713 17:30:57.118" endtime="20230713 17:30:59.484"/>
+<status status="PASS" starttime="20230717 12:32:41.001" endtime="20230717 12:32:44.877"/>
 </suite>
 <statistics>
 <total>
