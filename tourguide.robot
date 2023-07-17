@@ -71,17 +71,21 @@ ${reset_button}    //button[@type="submit"]
 # To Skip Tour
 ${skip_tour}    //button[text()="Skip"]
 ${next_tour}    //button[text()="Yes"]
-${next1}    //a[@role="button"][text()="Next"]
-${next2}    //a[@role="button"][text()="Next"]
-${next3}    //a[@role="button"][text()="Next"]
-${next4}    //a[@role="button"][text()="Next"]
-${next5}    //a[@role="button"][text()="Next"]
-${next6}    //a[@role="button"][text()="Next"]
-${next7}    //a[@role="button"][text()="Done"]
-${next1_p2p}    //a[@role="button"][text()="Next"]
-${next2_p2p}    //a[@role="button"][text()="Next"]
-${next3_p2p}    //a[@role="button"][text()="Next"]
-${next4_p2p}    //a[@role="button"][text()="Done"]
+${next1}    //a[text()="Next"]
+${next2}    //a[text()="Next"]
+${next3}    //a[text()="Next"]
+${next4}    //a[text()="Next"]
+${next5}    //a[text()="Next"]
+${next6}    //a[text()="Next"]
+${next7}    //a[text()="Done"]
+${next1_p2p}    //a[text()="Next"]
+${next2_p2p}    //a[text()="Next"]
+${next3_p2p}    //a[text()="Next"]
+${next4_p2p}    //a[text()="Done"]
+${next1_contract}    //a[text()="Next"]
+${next2_contract}    //a[text()="Next"]
+${next3_contract}    //a[text()="Next"]
+${next4_contract}    //a[text()="Done"]
 
 *** Keywords ***
 
@@ -129,6 +133,7 @@ Tour Guide
     Login with first password
     Wait Until Page Contains Element    ${next_tour}
     Click Element    ${next_tour}
+    Sleep    1
     Wait Until Element Is Enabled    ${next1}
     Click Element    ${next1}
     Sleep    1
@@ -161,4 +166,16 @@ Tour Guide
     Sleep    1
     Wait Until Element Is Enabled    ${next4_p2p}
     Click Element    ${next4_p2p}
+    Sleep    1
+    Wait Until Element Is Enabled    ${next1_contract}
+    Click Element    ${next1_contract}
+    Sleep    1
+    Wait Until Element Is Enabled    ${next2_contract}
+    Click Element    ${next2_contract}
+    Sleep    1
+    Wait Until Element Is Enabled    ${next3_contract}
+    Click Element    ${next3_contract}
+    Sleep    1
+    Wait Until Element Is Enabled    ${next4_contract}
+    Click Element    ${next4_contract}
     Sleep    1

@@ -162,13 +162,13 @@ Sell 0.1 BTC
 
 *** Test Cases ***
 
-login 
+Log In 
     Go To Website
     Login with first password
     Wait Until Element Is Visible    ${successful_login}
     Sleep    4
 
-logout
+Log Out
     Go To Website
     Login with first password
     Logout
