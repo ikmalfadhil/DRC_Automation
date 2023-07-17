@@ -98,28 +98,41 @@ To Profile Page
     Wait Until Element Is Enabled    ${profile_button}
     Click Element    ${profile_button}
 
+Deposit Into Wallet
+    Wait Until Element Is Visible    ${wallet}    10
+    Click Element    ${wallet}
+    Wait Until Element Is Visible    ${deposit_dropdown}    10
+    Click Element    ${deposit_dropdown}
+    Wait Until Element Is Visible    ${wallet_input}    10
+Withdraw From Wallet
+    Wait Until Element Is Visible    ${wallet}    10
+    Click Element    ${wallet}
+    Wait Until Element Is Visible    ${withdraw_dropdown}    10
+    Click Element    ${withdraw_dropdown}
+    Wait Until Element Is Visible    ${wallet_input}
+
 Deposit 10000 USD into Wallet
     Wait Until Element Is Visible    ${wallet}    10
     Click Element    ${wallet}
-    Wait Until Element Is Visible    ${deposit_dropdown}
+    Wait Until Element Is Visible    ${deposit_dropdown}    10
     Click Element    ${deposit_dropdown}
-    Wait Until Element Is Visible    ${wallet_input}
+    Wait Until Element Is Visible    ${wallet_input}    10
     Input Text    ${wallet_input}    10000
     Click Element    ${deposit_button}
-    Wait Until Page Contains Element    ${successful_deposit}
-    Wait Until Element Is Enabled    ${wallet}
+    Wait Until Page Contains Element    ${successful_deposit}    10
+    Wait Until Element Is Enabled    ${wallet}    10
     Click Element    ${USD_opt}
 
 Withdraw 10000 USD out of Wallet
-    Wait Until Element Is Visible    ${wallet}
+    Wait Until Element Is Visible    ${wallet}    10
     Click Element    ${wallet}
-    Wait Until Element Is Visible    ${withdraw_dropdown}
+    Wait Until Element Is Visible    ${withdraw_dropdown}    10
     Click Element    ${withdraw_dropdown}
-    Wait Until Element Is Visible    ${wallet_input}
+    Wait Until Element Is Visible    ${wallet_input}    10
     Input Text    ${wallet_input}    10000
     Click Element    ${withdraw_button}
-    Wait Until Element Is Visible    ${successful_withdraw}
-    Wait Until Element Is Enabled    ${wallet}
+    Wait Until Element Is Visible    ${successful_withdraw}    10
+    Wait Until Element Is Enabled    ${wallet}    10
     Click Element    ${USD_opt}
 
 
@@ -130,10 +143,10 @@ Deposit 10000 USD into Wallet and Check Wallet History
     Login with first password
     Deposit 10000 USD into Wallet
     To Profile Page
-    Wait Until Element Is Enabled   ${wallet_history_tab}
+    Wait Until Element Is Enabled   ${wallet_history_tab}    10
     Click Element    ${wallet_history_tab}
-    Wait Until Element Is Visible    ${first_row_deposit}
-    Wait Until Element Is Visible    ${first_row_wallet_txn}
+    Wait Until Element Is Visible    ${first_row_deposit}    10
+    Wait Until Element Is Visible    ${first_row_wallet_txn}    10
     Sleep    4
 
 Withdraw 10000 USD into Wallet and Check Wallet History
@@ -141,7 +154,7 @@ Withdraw 10000 USD into Wallet and Check Wallet History
     Login with first password
     Withdraw 10000 USD out of Wallet
     To Profile Page
-    Wait Until Element Is Enabled    ${wallet_history_tab}
+    Wait Until Element Is Enabled    ${wallet_history_tab}    10
     Click Element    ${wallet_history_tab}
     Wait Until Element Is Visible    ${first_row_withdraw}    10
     Wait Until Element Is Visible    ${first_row_wallet_txn}    10
@@ -150,15 +163,21 @@ Withdraw 10000 USD into Wallet and Check Wallet History
 Verify if User is Prompted to Input a Positive Number when Depositing/Withdrawing
     Go To Website
     Login with first password
-    Wait Until Element Is Visible    ${wallet}    10
-    Click Element    ${wallet}
-    Wait Until Element Is Visible    ${deposit_dropdown}
-    Click Element    ${deposit_dropdown}
-    Wait Until Element Is Visible    ${wallet_input}
+    Deposit Into Wallet
     Input Text    ${wallet_input}    0
     Click Element    ${deposit_button}
-    Wait Until Page Contains Element    ${error}
+    Wait Until Page Contains Element    ${error}    10
 
 Verify if Add and Subtract Icon Is Able Increase and Decrease Amount
     Go To Website
     Login with first password
+    Deposit Into Wallet
+    FOR    ${i}    IN RANGE    1    11
+        Click Element    ${add_icon}
+        Sleep    0.4
+    END
+    FOR    ${i}    IN RANGE    1    11
+        Click Element    ${subtract_icon}
+        Sleep    0.4
+    END
+
