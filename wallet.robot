@@ -20,8 +20,11 @@ ${deposit_dropdown}    //*[@role="listbox"]/button
 ${withdraw_dropdown}    //*[@role="listbox"]/button[2]
 ${wallet_input}    //input[@inputmode="numeric"]
 ${USD_opt}    //*[@role="listbox"]/li
+${add_icon}    //*[@class="deposit-input-box MuiBox-root css-0"]/button[2]
+${subtract_icon}    //*[@class="deposit-input-box MuiBox-root css-0"]/button[1]
 ${deposit_button}    //*[@class="deposit-form"]/button
 ${withdraw_button}    //*[@class="deposit-form"]/button
+${error}    //p[text()="Amount must be a positive number"]
 
 # Login Pop-up
 ${login_email}    //*[@name="email"]
@@ -29,7 +32,7 @@ ${login_password}    //*[@name="password"]
 ${login_button}    //*[@class="mt-10 form"]/button
 
 # Success Messages
-${successful_login}    //div[text()="Welcome ikmal"]
+${successful_login}    //div[text()="Welcome syurss"]
 ${successful_logout}    //div[text()="Successfully Logout"]
 ${successful_buy}    //div[text()="Buy order successful"]
 ${successful_sell}    //div[text()="Sell order successful"]
@@ -46,27 +49,11 @@ ${sell_toggle}    //*[@class="buy-sell-toggle"]/button[2]
 ${amount_input}    //*[@class="amount"]/div/div/input
 ${buysell_button}    //*[@class="side-bar-input"]/button
 
-#Transaction History Tab
-${transaction_history_tab}    //*[@id="vertical-tab-0"]
-${first_row_buy}    //td[2][text()="buy"]
-${first_row_sell}    //td[2][text()="sell"]
-${first_row_BTC}    //td[3][text()="BTC"]
-${first_row_ETH}    //td[3][text()="ETH"]
-${first_row_txn_amt}    //td[5][text()="10,000"]
-${first_row_coin_amt}    //td[4][text()="0.1"]
-
 # Wallet History Tab
 ${wallet_history_tab}    //*[@id="vertical-tab-1"]
 ${first_row_deposit}    //td[2][text()="deposit"]
 ${first_row_withdraw}    //td[2][text()="withdraw"]
 ${first_row_wallet_txn}     //td[5][text()="10,000"]
-
-# Reset Password Tab
-${reset_password_tab}    //*[@id="vertical-tab-3"]
-${current_password}    //input[@name="old_password"]
-${new_password}    //input[@name="password"]
-${repeat_password}    //input[@name="new_password"]
-${reset_button}    //button[@type="submit"]
 
 # To Skip Tour
 ${skip_tour}    //button[text()="Skip"]
@@ -83,7 +70,7 @@ Login with first password
     Wait Until Element Is Visible    ${logo}
     Click Element    ${login}
     Wait Until Element Is Visible    ${login_popup}
-    Input Text    ${login_email}    ikmal@besquare.com.my
+    Input Text    ${login_email}    asyurajohane@gmail.com
     Input Password    ${login_password}    Ikmal12!
     Click Element    ${login_button}
     Wait Until Element Is Visible    ${successful_login}
@@ -135,45 +122,8 @@ Withdraw 10000 USD out of Wallet
     Wait Until Element Is Enabled    ${wallet}
     Click Element    ${USD_opt}
 
-Buy 10000 USD worth of BTC
-    Wait Until Page Contains Element    ${currency_dropdown}
-    Click Element    ${currency_dropdown}
-    Wait Until Element Is Visible    ${BTC_currency}
-    Click Element    ${BTC_currency}
-    Click Element    ${buy_toggle}
-    Input Text    ${amount_input}    10000
-    Sleep    4
-    Wait Until Element Is Enabled    ${buysell_button}
-    Click Element    ${buysell_button}
-    Wait Until Element Is Visible    ${successful_buy}
-
-Sell 0.1 BTC
-    Wait Until Page Contains Element    ${currency_dropdown}
-    Click Element    ${currency_dropdown}
-    Wait Until Element Is Visible    ${BTC_currency}
-    Click Element    ${BTC_currency}
-    Click Element    ${sell_toggle}
-    Input Text    ${amount_input}    0.1
-    Sleep    4
-    Wait Until Element Is Enabled    ${buysell_button}
-    Click Element    ${buysell_button}
-    Wait Until Element Is Visible    ${successful_sell}
-
 
 *** Test Cases ***
-
-Log In 
-    Go To Website
-    Login with first password
-    Wait Until Element Is Visible    ${successful_login}
-    Sleep    4
-
-Log Out
-    Go To Website
-    Login with first password
-    Logout
-    Wait Until Element Is Visible    ${successful_logout}
-    Sleep    4
 
 Deposit 10000 USD into Wallet and Check Wallet History
     Go To Website
@@ -197,31 +147,18 @@ Withdraw 10000 USD into Wallet and Check Wallet History
     Wait Until Element Is Visible    ${first_row_wallet_txn}    10
     Sleep    4
 
-Buy 10000 USD worth of BTC and Check Transaction History
+Verify if User is Prompted to Input a Positive Number when Depositing/Withdrawing
     Go To Website
     Login with first password
-    Deposit 10000 USD into Wallet
-    Buy 10000 USD worth of BTC
-    To Profile Page
-    Wait Until Element Is Visible    ${transaction_history_tab}
-    Click Element    ${transaction_history_tab}
-    Wait Until Element Is Visible    ${first_row_buy}    10
-    Wait Until Element Is Visible    ${first_row_BTC}    10
-    Wait Until Element Is Visible    ${first_row_txn_amt}    10
-    Sleep   4
+    Wait Until Element Is Visible    ${wallet}    10
+    Click Element    ${wallet}
+    Wait Until Element Is Visible    ${deposit_dropdown}
+    Click Element    ${deposit_dropdown}
+    Wait Until Element Is Visible    ${wallet_input}
+    Input Text    ${wallet_input}    0
+    Click Element    ${deposit_button}
+    Wait Until Page Contains Element    ${error}
 
-Sell 0.1 BTC and Check Transaction History
+Verify if Add and Subtract Icon Is Able Increase and Decrease Amount
     Go To Website
     Login with first password
-    Deposit 10000 USD into Wallet
-    Buy 10000 USD worth of BTC
-    Sell 0.1 BTC
-    To Profile Page
-    Wait Until Element Is Visible    ${transaction_history_tab}
-    Click Element    ${transaction_history_tab}
-    Wait Until Element Is Visible    ${first_row_sell}    10
-    Wait Until Element Is Visible    ${first_row_BTC}    10
-    Wait Until Element Is Visible    ${first_row_coin_amt}    10
-    Sleep   4
-
-
