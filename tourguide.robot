@@ -71,21 +71,8 @@ ${reset_button}    //button[@type="submit"]
 # To Skip Tour
 ${skip_tour}    //button[text()="Skip"]
 ${next_tour}    //button[text()="Yes"]
-${next1}    //a[text()="Next"]
-${next2}    //a[text()="Next"]
-${next3}    //a[text()="Next"]
-${next4}    //a[text()="Next"]
-${next5}    //a[text()="Next"]
-${next6}    //a[text()="Next"]
-${next7}    //a[text()="Done"]
-${next1_p2p}    //a[text()="Next"]
-${next2_p2p}    //a[text()="Next"]
-${next3_p2p}    //a[text()="Next"]
-${next4_p2p}    //a[text()="Done"]
-${next1_contract}    //a[text()="Next"]
-${next2_contract}    //a[text()="Next"]
-${next3_contract}    //a[text()="Next"]
-${next4_contract}    //a[text()="Done"]
+${next}    //a[text()="Next"]
+${done}    //a[text()="Done"]
 
 *** Keywords ***
 
@@ -134,48 +121,48 @@ Tour Guide
     Wait Until Page Contains Element    ${next_tour}
     Click Element    ${next_tour}
     Sleep    1
-    Wait Until Element Is Enabled    ${next1}
-    Click Element    ${next1}
+    Wait Until Element Is Enabled    ${next}
+    Click Element    ${next}
     Sleep    1
-    Wait Until Element Is Enabled    ${next2}
-    Click Element    ${next2}
+    Wait Until Element Is Enabled    ${next}
+    Click Element    ${next}
     Sleep    1
-    Wait Until Element Is Enabled    ${next3}
-    Click Element    ${next3}
+    Wait Until Element Is Enabled    ${next}
+    Click Element    ${next}
     Sleep    1
-    Wait Until Element Is Enabled    ${next4}
-    Click Element    ${next4}
+    Wait Until Element Is Enabled    ${next}
+    Click Element    ${next}
     Sleep    1
-    Wait Until Element Is Enabled    ${next5}
-    Click Element    ${next5}
+    Wait Until Element Is Enabled    ${next}
+    Click Element    ${next}
     Sleep    1
-    Wait Until Element Is Enabled    ${next6}
-    Click Element    ${next6}
+    Wait Until Element Is Enabled    ${next}
+    Click Element    ${next}
     Sleep    1
-    Wait Until Element Is Enabled    ${next7}
-    Click Element    ${next7}
+    Wait Until Element Is Enabled    ${done}
+    Click Element    ${done}
     Sleep    1
-    Wait Until Element Is Enabled    ${next1_p2p}
-    Click Element    ${next1_p2p}
+    Wait Until Element Is Enabled    ${next}
+    Click Element    ${next}
     Sleep    1
-    Wait Until Element Is Enabled    ${next2_p2p}
-    Click Element    ${next2_p2p}
+    Wait Until Element Is Enabled    ${next}
+    Click Element    ${next}
     Sleep    1
-    Wait Until Element Is Enabled    ${next3_p2p}
-    Click Element    ${next3_p2p}
+    Wait Until Element Is Enabled    ${next}
+    Click Element    ${next}
     Sleep    1
-    Wait Until Element Is Enabled    ${next4_p2p}
-    Click Element    ${next4_p2p}
+    Wait Until Element Is Enabled    ${done}
+    Click Element    ${done}
     Sleep    1
-    Wait Until Element Is Enabled    ${next1_contract}
-    Click Element    ${next1_contract}
+    Wait Until Element Is Enabled    ${next}
+    Click Element    ${next}
     Sleep    1
-    Wait Until Element Is Enabled    ${next2_contract}
-    Click Element    ${next2_contract}
+    Wait Until Element Is Enabled    ${next}
+    Click Element    ${next}
     Sleep    1
-    Wait Until Element Is Enabled    ${next3_contract}
-    Click Element    ${next3_contract}
+    Wait Until Element Is Enabled    ${next}
+    Click Element    ${next}
     Sleep    1
-    Wait Until Element Is Enabled    ${next4_contract}
-    Click Element    ${next4_contract}
+    Wait Until Element Is Enabled    ${done}
+    Click Element    ${done}
     Sleep    1
