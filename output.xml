@@ -1,350 +1,460 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.10.6 on linux)" generated="20230717 17:16:59.889" rpa="false" schemaversion="3">
-<suite id="s1" name="P2P" source="/home/ikmal/Desktop/DRCautomation/p2p.robot">
-<test id="s1-t1" name="Navigate To Website" line="38">
+<robot generator="Robot 6.0.2 (Python 3.10.6 on linux)" generated="20230718 16:09:40.120" rpa="false" schemaversion="3">
+<suite id="s1" name="Wallet" source="/home/ikmal/Desktop/DRCautomation/wallet.robot">
+<test id="s1-t1" name="Verify if Add and Subtract Icon Is Able Increase and Decrease Amount" line="171">
+<kw name="Go To Website">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>https://crypthub-app.vercel.app/</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230717 17:16:59.971" level="INFO">Opening browser 'chrome' to base url 'https://crypthub-app.vercel.app/'.</msg>
-<status status="PASS" starttime="20230717 17:16:59.971" endtime="20230717 17:17:01.508"/>
+<msg timestamp="20230718 16:09:40.236" level="INFO">Opening browser 'chrome' to base url 'https://crypthub-app.vercel.app/'.</msg>
+<status status="PASS" starttime="20230718 16:09:40.235" endtime="20230718 16:09:42.319"/>
 </kw>
 <kw name="Set Window Size" library="SeleniumLibrary">
 <arg>1280</arg>
 <arg>1024</arg>
 <doc>Sets current windows size to given ``width`` and ``height``.</doc>
-<status status="PASS" starttime="20230717 17:17:01.508" endtime="20230717 17:17:01.618"/>
+<status status="PASS" starttime="20230718 16:09:42.319" endtime="20230718 16:09:42.436"/>
 </kw>
-<status status="PASS" starttime="20230717 17:16:59.970" endtime="20230717 17:17:01.618"/>
-</test>
-<test id="s1-t2" name="Login" line="43">
+<status status="PASS" starttime="20230718 16:09:40.235" endtime="20230718 16:09:42.436"/>
+</kw>
+<kw name="Login with first password">
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>${logo}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20230717 17:17:01.619" endtime="20230717 17:17:01.634"/>
+<status status="PASS" starttime="20230718 16:09:42.437" endtime="20230718 16:09:42.455"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${logo}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230717 17:17:01.634" endtime="20230717 17:17:01.653"/>
+<status status="PASS" starttime="20230718 16:09:42.455" endtime="20230718 16:09:42.478"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${login}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230717 17:17:01.654" level="INFO">Clicking element '//*[@class="nav-end"]/button'.</msg>
-<status status="PASS" starttime="20230717 17:17:01.654" endtime="20230717 17:17:01.743"/>
+<msg timestamp="20230718 16:09:42.480" level="INFO">Clicking element '//*[@class="nav-end"]/button'.</msg>
+<status status="PASS" starttime="20230718 16:09:42.479" endtime="20230718 16:09:42.565"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${login_popup}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230717 17:17:01.744" endtime="20230717 17:17:01.770"/>
+<status status="PASS" starttime="20230718 16:09:42.566" endtime="20230718 16:09:42.594"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${login_email}</arg>
-<arg>farhana@besquare.com.my</arg>
+<arg>asyurajohane@gmail.com</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230717 17:17:01.770" level="INFO">Typing text 'farhana@besquare.com.my' into text field '//*[@class="wrapper"]/div/div/div[2]/form/div/div/div/input'.</msg>
-<status status="PASS" starttime="20230717 17:17:01.770" endtime="20230717 17:17:01.893"/>
+<msg timestamp="20230718 16:09:42.595" level="INFO">Typing text 'asyurajohane@gmail.com' into text field '//*[@name="email"]'.</msg>
+<status status="PASS" starttime="20230718 16:09:42.594" endtime="20230718 16:09:42.819"/>
 </kw>
 <kw name="Input Password" library="SeleniumLibrary">
 <arg>${login_password}</arg>
-<arg>Test1234@</arg>
+<arg>Ikmal12!</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20230717 17:17:01.896" level="INFO">Typing password into text field '//*[@class="wrapper"]/div/div/div[2]/form/div[2]/div/div/input'.</msg>
-<msg timestamp="20230717 17:17:01.935" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20230717 17:17:01.985" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20230717 17:17:01.893" endtime="20230717 17:17:01.985"/>
+<msg timestamp="20230718 16:09:42.819" level="INFO">Typing password into text field '//*[@name="password"]'.</msg>
+<msg timestamp="20230718 16:09:42.862" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230718 16:09:42.923" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230718 16:09:42.819" endtime="20230718 16:09:42.924"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${login_button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230717 17:17:01.986" level="INFO">Clicking element '//*[@class="wrapper"]/div/div/div[2]/form/button'.</msg>
-<status status="PASS" starttime="20230717 17:17:01.985" endtime="20230717 17:17:02.053"/>
+<msg timestamp="20230718 16:09:42.926" level="INFO">Clicking element '//*[@class="mt-10 form"]/button'.</msg>
+<status status="PASS" starttime="20230718 16:09:42.925" endtime="20230718 16:09:42.986"/>
 </kw>
-<status status="PASS" starttime="20230717 17:17:01.619" endtime="20230717 17:17:02.054"/>
-</test>
-<test id="s1-t3" name="Navigate to P2P Page" line="53">
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>P2P Trader</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20230717 17:17:02.070" level="INFO">Current page contains text 'P2P Trader'.</msg>
-<status status="PASS" starttime="20230717 17:17:02.054" endtime="20230717 17:17:02.071"/>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${successful_login}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230718 16:09:42.986" endtime="20230718 16:09:43.652"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${p2p_link}</arg>
+<arg>${skip_tour}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230717 17:17:02.071" level="INFO">Clicking element '//*[@id="dark"]/header/div/div/div[1]/a[2]'.</msg>
-<msg timestamp="20230717 17:17:03.337" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-103.png"&gt;&lt;img src="selenium-screenshot-103.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20230717 17:17:03.337" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;a class="link" id="p2p-page-tour" href="/p2pTrader"&gt;...&lt;/a&gt; is not clickable at point (410, 32). Other element would receive the click: &lt;div class="MuiDialog-container MuiDialog-scrollPaper css-ekeie0" role="presentation" tabindex="-1" style="opacity: 1; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"&gt;...&lt;/div&gt;
-  (Session info: chrome=113.0.5672.92)
-Stacktrace:
-#0 0x561734d0f133 &lt;unknown&gt;
-#1 0x561734a43966 &lt;unknown&gt;
-#2 0x561734a863f2 &lt;unknown&gt;
-#3 0x561734a845ac &lt;unknown&gt;
-#4 0x561734a823be &lt;unknown&gt;
-#5 0x561734a81696 &lt;unknown&gt;
-#6 0x561734a763ea &lt;unknown&gt;
-#7 0x561734a9fbd2 &lt;unknown&gt;
-#8 0x561734a75d13 &lt;unknown&gt;
-#9 0x561734a9fd9e &lt;unknown&gt;
-#10 0x561734ab81c7 &lt;unknown&gt;
-#11 0x561734a9f9a3 &lt;unknown&gt;
-#12 0x561734a7446a &lt;unknown&gt;
-#13 0x561734a7555e &lt;unknown&gt;
-#14 0x561734ccecae &lt;unknown&gt;
-#15 0x561734cd28fe &lt;unknown&gt;
-#16 0x561734cdbf20 &lt;unknown&gt;
-#17 0x561734cd3923 &lt;unknown&gt;
-#18 0x561734ca6c0e &lt;unknown&gt;
-#19 0x561734cf6b08 &lt;unknown&gt;
-#20 0x561734cf6c97 &lt;unknown&gt;
-#21 0x561734d07113 &lt;unknown&gt;
-#22 0x7fd5f0f4bb43 &lt;unknown&gt;
-</msg>
-<status status="FAIL" starttime="20230717 17:17:02.071" endtime="20230717 17:17:03.337"/>
+<msg timestamp="20230718 16:09:43.653" level="INFO">Clicking element '//button[text()="Skip"]'.</msg>
+<status status="PASS" starttime="20230718 16:09:43.652" endtime="20230718 16:09:43.704"/>
 </kw>
-<status status="FAIL" starttime="20230717 17:17:02.054" endtime="20230717 17:17:03.338">ElementClickInterceptedException: Message: element click intercepted: Element &lt;a class="link" id="p2p-page-tour" href="/p2pTrader"&gt;...&lt;/a&gt; is not clickable at point (410, 32). Other element would receive the click: &lt;div class="MuiDialog-container MuiDialog-scrollPaper css-ekeie0" role="presentation" tabindex="-1" style="opacity: 1; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"&gt;...&lt;/div&gt;
-  (Session info: chrome=113.0.5672.92)
-Stacktrace:
-#0 0x561734d0f133 &lt;unknown&gt;
-#1 0x561734a43966 &lt;unknown&gt;
-#2 0x561734a863f2 &lt;unknown&gt;
-#3 0x561734a845ac &lt;unknown&gt;
-#4 0x561734a823be &lt;unknown&gt;
-#5 0x561734a81696 &lt;unknown&gt;
-#6 0x561734a763ea &lt;unknown&gt;
-#7 0x561734a9fbd2 &lt;unknown&gt;
-#8 0x561734a75d13 &lt;unknown&gt;
-#9 0x561734a9fd9e &lt;unknown&gt;
-#10 0x561734ab81c7 &lt;unknown&gt;
-#11 0x561734a9f9a3 &lt;unknown&gt;
-#12 0x561734a7446a &lt;unknown&gt;
-#13 0x561734a7555e &lt;unknown&gt;
-#14 0x561734ccecae &lt;unknown&gt;
-#15 0x561734cd28fe &lt;unknown&gt;
-#16 0x561734cdbf20 &lt;unknown&gt;
-#17 0x561734cd3923 &lt;unknown&gt;
-#18 0x561734ca6c0e &lt;unknown&gt;
-#19 0x561734cf6b08 &lt;unknown&gt;
-#20 0x561734cf6c97 &lt;unknown&gt;
-#21 0x561734d07113 &lt;unknown&gt;
-#22 0x7fd5f0f4bb43 &lt;unknown&gt;
-</status>
-</test>
-<test id="s1-t4" name="Filter and buy an ETH contract" line="57">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${btc_filter}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230717 17:17:03.339" level="INFO">Clicking element '//*[@id="dark"]/div[1]/div[1]/div/div/label[2]/span[1]/input'.</msg>
-<msg timestamp="20230717 17:17:03.501" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-104.png"&gt;&lt;img src="selenium-screenshot-104.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20230717 17:17:03.501" level="FAIL">Element with locator '//*[@id="dark"]/div[1]/div[1]/div/div/label[2]/span[1]/input' not found.</msg>
-<status status="FAIL" starttime="20230717 17:17:03.339" endtime="20230717 17:17:03.502"/>
+<status status="PASS" starttime="20230718 16:09:42.437" endtime="20230718 16:09:43.704"/>
 </kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${contract_card}</arg>
-<arg>5</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" starttime="20230717 17:17:03.502" endtime="20230717 17:17:03.502"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${buy_btn}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20230717 17:17:03.502" endtime="20230717 17:17:03.502"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${alert_box}</arg>
+<kw name="Deposit Into Wallet">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${wallet}</arg>
 <arg>10</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" starttime="20230717 17:17:03.502" endtime="20230717 17:17:03.502"/>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230718 16:09:43.705" endtime="20230718 16:09:43.729"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${yes_btn}</arg>
+<arg>${wallet}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20230717 17:17:03.502" endtime="20230717 17:17:03.502"/>
+<msg timestamp="20230718 16:09:43.730" level="INFO">Clicking element '//*[@id="wallet"]'.</msg>
+<status status="PASS" starttime="20230718 16:09:43.729" endtime="20230718 16:09:43.999"/>
 </kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${buy_success}</arg>
-<arg>5</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" starttime="20230717 17:17:03.502" endtime="20230717 17:17:03.502"/>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${deposit_dropdown}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230718 16:09:43.999" endtime="20230718 16:09:44.019"/>
 </kw>
-<status status="FAIL" starttime="20230717 17:17:03.338" endtime="20230717 17:17:03.503">Element with locator '//*[@id="dark"]/div[1]/div[1]/div/div/label[2]/span[1]/input' not found.</status>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${deposit_dropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230718 16:09:44.020" level="INFO">Clicking element '//*[@role="listbox"]/button'.</msg>
+<status status="PASS" starttime="20230718 16:09:44.019" endtime="20230718 16:09:44.071"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${wallet_input}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230718 16:09:44.071" endtime="20230718 16:09:44.324"/>
+</kw>
+<status status="PASS" starttime="20230718 16:09:43.705" endtime="20230718 16:09:44.325"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>11</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${add_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230718 16:09:44.330" level="INFO">Clicking element '(//*[@class="deposit-input-box MuiBox-root css-0"]/button[2])[2]'.</msg>
+<status status="PASS" starttime="20230718 16:09:44.328" endtime="20230718 16:09:44.387"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230718 16:09:44.788" level="INFO">Slept 400 milliseconds</msg>
+<status status="PASS" starttime="20230718 16:09:44.387" endtime="20230718 16:09:44.789"/>
+</kw>
+<status status="PASS" starttime="20230718 16:09:44.327" endtime="20230718 16:09:44.789"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${add_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230718 16:09:44.792" level="INFO">Clicking element '(//*[@class="deposit-input-box MuiBox-root css-0"]/button[2])[2]'.</msg>
+<status status="PASS" starttime="20230718 16:09:44.790" endtime="20230718 16:09:44.851"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230718 16:09:45.252" level="INFO">Slept 400 milliseconds</msg>
+<status status="PASS" starttime="20230718 16:09:44.851" endtime="20230718 16:09:45.252"/>
+</kw>
+<status status="PASS" starttime="20230718 16:09:44.790" endtime="20230718 16:09:45.253"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${add_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230718 16:09:45.255" level="INFO">Clicking element '(//*[@class="deposit-input-box MuiBox-root css-0"]/button[2])[2]'.</msg>
+<status status="PASS" starttime="20230718 16:09:45.254" endtime="20230718 16:09:45.313"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230718 16:09:45.714" level="INFO">Slept 400 milliseconds</msg>
+<status status="PASS" starttime="20230718 16:09:45.313" endtime="20230718 16:09:45.715"/>
+</kw>
+<status status="PASS" starttime="20230718 16:09:45.253" endtime="20230718 16:09:45.717"/>
+</iter>
+<iter>
+<var name="${i}">4</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${add_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230718 16:09:45.720" level="INFO">Clicking element '(//*[@class="deposit-input-box MuiBox-root css-0"]/button[2])[2]'.</msg>
+<status status="PASS" starttime="20230718 16:09:45.718" endtime="20230718 16:09:45.799"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230718 16:09:46.200" level="INFO">Slept 400 milliseconds</msg>
+<status status="PASS" starttime="20230718 16:09:45.800" endtime="20230718 16:09:46.201"/>
+</kw>
+<status status="PASS" starttime="20230718 16:09:45.718" endtime="20230718 16:09:46.201"/>
+</iter>
+<iter>
+<var name="${i}">5</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${add_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230718 16:09:46.233" level="INFO">Clicking element '(//*[@class="deposit-input-box MuiBox-root css-0"]/button[2])[2]'.</msg>
+<status status="PASS" starttime="20230718 16:09:46.202" endtime="20230718 16:09:46.268"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230718 16:09:46.668" level="INFO">Slept 400 milliseconds</msg>
+<status status="PASS" starttime="20230718 16:09:46.268" endtime="20230718 16:09:46.668"/>
+</kw>
+<status status="PASS" starttime="20230718 16:09:46.202" endtime="20230718 16:09:46.669"/>
+</iter>
+<iter>
+<var name="${i}">6</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${add_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230718 16:09:46.669" level="INFO">Clicking element '(//*[@class="deposit-input-box MuiBox-root css-0"]/button[2])[2]'.</msg>
+<status status="PASS" starttime="20230718 16:09:46.669" endtime="20230718 16:09:46.718"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230718 16:09:47.118" level="INFO">Slept 400 milliseconds</msg>
+<status status="PASS" starttime="20230718 16:09:46.718" endtime="20230718 16:09:47.119"/>
+</kw>
+<status status="PASS" starttime="20230718 16:09:46.669" endtime="20230718 16:09:47.119"/>
+</iter>
+<iter>
+<var name="${i}">7</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${add_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230718 16:09:47.123" level="INFO">Clicking element '(//*[@class="deposit-input-box MuiBox-root css-0"]/button[2])[2]'.</msg>
+<status status="PASS" starttime="20230718 16:09:47.121" endtime="20230718 16:09:47.180"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230718 16:09:47.582" level="INFO">Slept 400 milliseconds</msg>
+<status status="PASS" starttime="20230718 16:09:47.181" endtime="20230718 16:09:47.582"/>
+</kw>
+<status status="PASS" starttime="20230718 16:09:47.120" endtime="20230718 16:09:47.583"/>
+</iter>
+<iter>
+<var name="${i}">8</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${add_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230718 16:09:47.585" level="INFO">Clicking element '(//*[@class="deposit-input-box MuiBox-root css-0"]/button[2])[2]'.</msg>
+<status status="PASS" starttime="20230718 16:09:47.584" endtime="20230718 16:09:47.650"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230718 16:09:48.051" level="INFO">Slept 400 milliseconds</msg>
+<status status="PASS" starttime="20230718 16:09:47.651" endtime="20230718 16:09:48.052"/>
+</kw>
+<status status="PASS" starttime="20230718 16:09:47.583" endtime="20230718 16:09:48.052"/>
+</iter>
+<iter>
+<var name="${i}">9</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${add_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230718 16:09:48.055" level="INFO">Clicking element '(//*[@class="deposit-input-box MuiBox-root css-0"]/button[2])[2]'.</msg>
+<status status="PASS" starttime="20230718 16:09:48.053" endtime="20230718 16:09:48.149"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230718 16:09:48.549" level="INFO">Slept 400 milliseconds</msg>
+<status status="PASS" starttime="20230718 16:09:48.149" endtime="20230718 16:09:48.550"/>
+</kw>
+<status status="PASS" starttime="20230718 16:09:48.052" endtime="20230718 16:09:48.550"/>
+</iter>
+<iter>
+<var name="${i}">10</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${add_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230718 16:09:48.553" level="INFO">Clicking element '(//*[@class="deposit-input-box MuiBox-root css-0"]/button[2])[2]'.</msg>
+<status status="PASS" starttime="20230718 16:09:48.551" endtime="20230718 16:09:48.607"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230718 16:09:49.009" level="INFO">Slept 400 milliseconds</msg>
+<status status="PASS" starttime="20230718 16:09:48.608" endtime="20230718 16:09:49.010"/>
+</kw>
+<status status="PASS" starttime="20230718 16:09:48.551" endtime="20230718 16:09:49.010"/>
+</iter>
+<status status="PASS" starttime="20230718 16:09:44.326" endtime="20230718 16:09:49.011"/>
+</for>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>11</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${subtract_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230718 16:09:49.014" level="INFO">Clicking element '(//*[@class="deposit-input-box MuiBox-root css-0"]/button[1])[2]'.</msg>
+<status status="PASS" starttime="20230718 16:09:49.013" endtime="20230718 16:09:49.084"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230718 16:09:49.486" level="INFO">Slept 400 milliseconds</msg>
+<status status="PASS" starttime="20230718 16:09:49.085" endtime="20230718 16:09:49.486"/>
+</kw>
+<status status="PASS" starttime="20230718 16:09:49.012" endtime="20230718 16:09:49.486"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${subtract_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230718 16:09:49.488" level="INFO">Clicking element '(//*[@class="deposit-input-box MuiBox-root css-0"]/button[1])[2]'.</msg>
+<status status="PASS" starttime="20230718 16:09:49.487" endtime="20230718 16:09:49.566"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230718 16:09:49.967" level="INFO">Slept 400 milliseconds</msg>
+<status status="PASS" starttime="20230718 16:09:49.567" endtime="20230718 16:09:49.968"/>
+</kw>
+<status status="PASS" starttime="20230718 16:09:49.487" endtime="20230718 16:09:49.968"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${subtract_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230718 16:09:49.972" level="INFO">Clicking element '(//*[@class="deposit-input-box MuiBox-root css-0"]/button[1])[2]'.</msg>
+<status status="PASS" starttime="20230718 16:09:49.970" endtime="20230718 16:09:50.019"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230718 16:09:50.421" level="INFO">Slept 400 milliseconds</msg>
+<status status="PASS" starttime="20230718 16:09:50.020" endtime="20230718 16:09:50.421"/>
+</kw>
+<status status="PASS" starttime="20230718 16:09:49.969" endtime="20230718 16:09:50.422"/>
+</iter>
+<iter>
+<var name="${i}">4</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${subtract_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230718 16:09:50.426" level="INFO">Clicking element '(//*[@class="deposit-input-box MuiBox-root css-0"]/button[1])[2]'.</msg>
+<status status="PASS" starttime="20230718 16:09:50.423" endtime="20230718 16:09:50.465"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230718 16:09:50.865" level="INFO">Slept 400 milliseconds</msg>
+<status status="PASS" starttime="20230718 16:09:50.465" endtime="20230718 16:09:50.866"/>
+</kw>
+<status status="PASS" starttime="20230718 16:09:50.422" endtime="20230718 16:09:50.866"/>
+</iter>
+<iter>
+<var name="${i}">5</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${subtract_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230718 16:09:50.868" level="INFO">Clicking element '(//*[@class="deposit-input-box MuiBox-root css-0"]/button[1])[2]'.</msg>
+<status status="PASS" starttime="20230718 16:09:50.866" endtime="20230718 16:09:50.912"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230718 16:09:51.313" level="INFO">Slept 400 milliseconds</msg>
+<status status="PASS" starttime="20230718 16:09:50.912" endtime="20230718 16:09:51.313"/>
+</kw>
+<status status="PASS" starttime="20230718 16:09:50.866" endtime="20230718 16:09:51.314"/>
+</iter>
+<iter>
+<var name="${i}">6</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${subtract_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230718 16:09:51.316" level="INFO">Clicking element '(//*[@class="deposit-input-box MuiBox-root css-0"]/button[1])[2]'.</msg>
+<status status="PASS" starttime="20230718 16:09:51.315" endtime="20230718 16:09:51.360"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230718 16:09:51.761" level="INFO">Slept 400 milliseconds</msg>
+<status status="PASS" starttime="20230718 16:09:51.360" endtime="20230718 16:09:51.761"/>
+</kw>
+<status status="PASS" starttime="20230718 16:09:51.314" endtime="20230718 16:09:51.762"/>
+</iter>
+<iter>
+<var name="${i}">7</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${subtract_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230718 16:09:51.764" level="INFO">Clicking element '(//*[@class="deposit-input-box MuiBox-root css-0"]/button[1])[2]'.</msg>
+<status status="PASS" starttime="20230718 16:09:51.763" endtime="20230718 16:09:51.821"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230718 16:09:52.222" level="INFO">Slept 400 milliseconds</msg>
+<status status="PASS" starttime="20230718 16:09:51.821" endtime="20230718 16:09:52.223"/>
+</kw>
+<status status="PASS" starttime="20230718 16:09:51.762" endtime="20230718 16:09:52.224"/>
+</iter>
+<iter>
+<var name="${i}">8</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${subtract_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230718 16:09:52.226" level="INFO">Clicking element '(//*[@class="deposit-input-box MuiBox-root css-0"]/button[1])[2]'.</msg>
+<status status="PASS" starttime="20230718 16:09:52.225" endtime="20230718 16:09:52.267"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230718 16:09:52.668" level="INFO">Slept 400 milliseconds</msg>
+<status status="PASS" starttime="20230718 16:09:52.267" endtime="20230718 16:09:52.669"/>
+</kw>
+<status status="PASS" starttime="20230718 16:09:52.224" endtime="20230718 16:09:52.669"/>
+</iter>
+<iter>
+<var name="${i}">9</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${subtract_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230718 16:09:52.671" level="INFO">Clicking element '(//*[@class="deposit-input-box MuiBox-root css-0"]/button[1])[2]'.</msg>
+<status status="PASS" starttime="20230718 16:09:52.670" endtime="20230718 16:09:52.713"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230718 16:09:53.114" level="INFO">Slept 400 milliseconds</msg>
+<status status="PASS" starttime="20230718 16:09:52.713" endtime="20230718 16:09:53.114"/>
+</kw>
+<status status="PASS" starttime="20230718 16:09:52.669" endtime="20230718 16:09:53.115"/>
+</iter>
+<iter>
+<var name="${i}">10</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${subtract_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230718 16:09:53.119" level="INFO">Clicking element '(//*[@class="deposit-input-box MuiBox-root css-0"]/button[1])[2]'.</msg>
+<status status="PASS" starttime="20230718 16:09:53.117" endtime="20230718 16:09:53.181"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230718 16:09:53.583" level="INFO">Slept 400 milliseconds</msg>
+<status status="PASS" starttime="20230718 16:09:53.182" endtime="20230718 16:09:53.584"/>
+</kw>
+<status status="PASS" starttime="20230718 16:09:53.116" endtime="20230718 16:09:53.585"/>
+</iter>
+<status status="PASS" starttime="20230718 16:09:49.011" endtime="20230718 16:09:53.585"/>
+</for>
+<status status="PASS" starttime="20230718 16:09:40.234" endtime="20230718 16:09:53.586"/>
 </test>
-<test id="s1-t5" name="Navigate to P2P Transaction History" line="66">
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${profile_icon}</arg>
-<arg>5</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20230717 17:17:03.503" endtime="20230717 17:17:03.515"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${profile_icon}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230717 17:17:03.515" level="INFO">Clicking element '//*[@class="nav-end"]/button'.</msg>
-<msg timestamp="20230717 17:17:04.754" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-105.png"&gt;&lt;img src="selenium-screenshot-105.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20230717 17:17:04.754" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-1egpgfe" tabindex="0" type="button" aria-label="Tour guide"&gt;...&lt;/button&gt; is not clickable at point (813, 32). Other element would receive the click: &lt;div class="MuiDialog-container MuiDialog-scrollPaper css-ekeie0" role="presentation" tabindex="-1" style="opacity: 1; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"&gt;...&lt;/div&gt;
-  (Session info: chrome=113.0.5672.92)
-Stacktrace:
-#0 0x561734d0f133 &lt;unknown&gt;
-#1 0x561734a43966 &lt;unknown&gt;
-#2 0x561734a863f2 &lt;unknown&gt;
-#3 0x561734a845ac &lt;unknown&gt;
-#4 0x561734a823be &lt;unknown&gt;
-#5 0x561734a81696 &lt;unknown&gt;
-#6 0x561734a763ea &lt;unknown&gt;
-#7 0x561734a9fbd2 &lt;unknown&gt;
-#8 0x561734a75d13 &lt;unknown&gt;
-#9 0x561734a9fd9e &lt;unknown&gt;
-#10 0x561734ab81c7 &lt;unknown&gt;
-#11 0x561734a9f9a3 &lt;unknown&gt;
-#12 0x561734a7446a &lt;unknown&gt;
-#13 0x561734a7555e &lt;unknown&gt;
-#14 0x561734ccecae &lt;unknown&gt;
-#15 0x561734cd28fe &lt;unknown&gt;
-#16 0x561734cdbf20 &lt;unknown&gt;
-#17 0x561734cd3923 &lt;unknown&gt;
-#18 0x561734ca6c0e &lt;unknown&gt;
-#19 0x561734cf6b08 &lt;unknown&gt;
-#20 0x561734cf6c97 &lt;unknown&gt;
-#21 0x561734d07113 &lt;unknown&gt;
-#22 0x7fd5f0f4bb43 &lt;unknown&gt;
-</msg>
-<status status="FAIL" starttime="20230717 17:17:03.515" endtime="20230717 17:17:04.755"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${profile_tab}</arg>
-<arg>5</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" starttime="20230717 17:17:04.755" endtime="20230717 17:17:04.755"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${profile_tab}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20230717 17:17:04.755" endtime="20230717 17:17:04.755"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${trans_table}</arg>
-<arg>5</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" starttime="20230717 17:17:04.755" endtime="20230717 17:17:04.755"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${p2p_hist}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20230717 17:17:04.755" endtime="20230717 17:17:04.755"/>
-</kw>
-<status status="FAIL" starttime="20230717 17:17:03.503" endtime="20230717 17:17:04.756">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-1egpgfe" tabindex="0" type="button" aria-label="Tour guide"&gt;...&lt;/button&gt; is not clickable at point (813, 32). Other element would receive the click: &lt;div class="MuiDialog-container MuiDialog-scrollPaper css-ekeie0" role="presentation" tabindex="-1" style="opacity: 1; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"&gt;...&lt;/div&gt;
-  (Session info: chrome=113.0.5672.92)
-Stacktrace:
-#0 0x561734d0f133 &lt;unknown&gt;
-#1 0x561734a43966 &lt;unknown&gt;
-#2 0x561734a863f2 &lt;unknown&gt;
-#3 0x561734a845ac &lt;unknown&gt;
-#4 0x561734a823be &lt;unknown&gt;
-#5 0x561734a81696 &lt;unknown&gt;
-#6 0x561734a763ea &lt;unknown&gt;
-#7 0x561734a9fbd2 &lt;unknown&gt;
-#8 0x561734a75d13 &lt;unknown&gt;
-#9 0x561734a9fd9e &lt;unknown&gt;
-#10 0x561734ab81c7 &lt;unknown&gt;
-#11 0x561734a9f9a3 &lt;unknown&gt;
-#12 0x561734a7446a &lt;unknown&gt;
-#13 0x561734a7555e &lt;unknown&gt;
-#14 0x561734ccecae &lt;unknown&gt;
-#15 0x561734cd28fe &lt;unknown&gt;
-#16 0x561734cdbf20 &lt;unknown&gt;
-#17 0x561734cd3923 &lt;unknown&gt;
-#18 0x561734ca6c0e &lt;unknown&gt;
-#19 0x561734cf6b08 &lt;unknown&gt;
-#20 0x561734cf6c97 &lt;unknown&gt;
-#21 0x561734d07113 &lt;unknown&gt;
-#22 0x7fd5f0f4bb43 &lt;unknown&gt;
-</status>
-</test>
-<test id="s1-t6" name="Navigate to P2P Page" line="77">
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>P2P Trader</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20230717 17:17:04.768" level="INFO">Current page contains text 'P2P Trader'.</msg>
-<status status="PASS" starttime="20230717 17:17:04.757" endtime="20230717 17:17:04.768"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${p2p_link}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230717 17:17:04.769" level="INFO">Clicking element '//*[@id="dark"]/header/div/div/div[1]/a[2]'.</msg>
-<msg timestamp="20230717 17:17:05.981" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-106.png"&gt;&lt;img src="selenium-screenshot-106.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20230717 17:17:05.981" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;a class="link" id="p2p-page-tour" href="/p2pTrader"&gt;...&lt;/a&gt; is not clickable at point (410, 32). Other element would receive the click: &lt;div class="MuiDialog-container MuiDialog-scrollPaper css-ekeie0" role="presentation" tabindex="-1" style="opacity: 1; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"&gt;...&lt;/div&gt;
-  (Session info: chrome=113.0.5672.92)
-Stacktrace:
-#0 0x561734d0f133 &lt;unknown&gt;
-#1 0x561734a43966 &lt;unknown&gt;
-#2 0x561734a863f2 &lt;unknown&gt;
-#3 0x561734a845ac &lt;unknown&gt;
-#4 0x561734a823be &lt;unknown&gt;
-#5 0x561734a81696 &lt;unknown&gt;
-#6 0x561734a763ea &lt;unknown&gt;
-#7 0x561734a9fbd2 &lt;unknown&gt;
-#8 0x561734a75d13 &lt;unknown&gt;
-#9 0x561734a9fd9e &lt;unknown&gt;
-#10 0x561734ab81c7 &lt;unknown&gt;
-#11 0x561734a9f9a3 &lt;unknown&gt;
-#12 0x561734a7446a &lt;unknown&gt;
-#13 0x561734a7555e &lt;unknown&gt;
-#14 0x561734ccecae &lt;unknown&gt;
-#15 0x561734cd28fe &lt;unknown&gt;
-#16 0x561734cdbf20 &lt;unknown&gt;
-#17 0x561734cd3923 &lt;unknown&gt;
-#18 0x561734ca6c0e &lt;unknown&gt;
-#19 0x561734cf6b08 &lt;unknown&gt;
-#20 0x561734cf6c97 &lt;unknown&gt;
-#21 0x561734d07113 &lt;unknown&gt;
-#22 0x7fd5f0f4bb43 &lt;unknown&gt;
-</msg>
-<status status="FAIL" starttime="20230717 17:17:04.768" endtime="20230717 17:17:05.981"/>
-</kw>
-<status status="FAIL" starttime="20230717 17:17:04.757" endtime="20230717 17:17:05.982">ElementClickInterceptedException: Message: element click intercepted: Element &lt;a class="link" id="p2p-page-tour" href="/p2pTrader"&gt;...&lt;/a&gt; is not clickable at point (410, 32). Other element would receive the click: &lt;div class="MuiDialog-container MuiDialog-scrollPaper css-ekeie0" role="presentation" tabindex="-1" style="opacity: 1; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"&gt;...&lt;/div&gt;
-  (Session info: chrome=113.0.5672.92)
-Stacktrace:
-#0 0x561734d0f133 &lt;unknown&gt;
-#1 0x561734a43966 &lt;unknown&gt;
-#2 0x561734a863f2 &lt;unknown&gt;
-#3 0x561734a845ac &lt;unknown&gt;
-#4 0x561734a823be &lt;unknown&gt;
-#5 0x561734a81696 &lt;unknown&gt;
-#6 0x561734a763ea &lt;unknown&gt;
-#7 0x561734a9fbd2 &lt;unknown&gt;
-#8 0x561734a75d13 &lt;unknown&gt;
-#9 0x561734a9fd9e &lt;unknown&gt;
-#10 0x561734ab81c7 &lt;unknown&gt;
-#11 0x561734a9f9a3 &lt;unknown&gt;
-#12 0x561734a7446a &lt;unknown&gt;
-#13 0x561734a7555e &lt;unknown&gt;
-#14 0x561734ccecae &lt;unknown&gt;
-#15 0x561734cd28fe &lt;unknown&gt;
-#16 0x561734cdbf20 &lt;unknown&gt;
-#17 0x561734cd3923 &lt;unknown&gt;
-#18 0x561734ca6c0e &lt;unknown&gt;
-#19 0x561734cf6b08 &lt;unknown&gt;
-#20 0x561734cf6c97 &lt;unknown&gt;
-#21 0x561734d07113 &lt;unknown&gt;
-#22 0x7fd5f0f4bb43 &lt;unknown&gt;
-</status>
-</test>
-<doc>Testing for login, create and delete api token</doc>
-<status status="FAIL" starttime="20230717 17:16:59.889" endtime="20230717 17:17:05.982"/>
+<doc>homepage</doc>
+<status status="PASS" starttime="20230718 16:09:40.123" endtime="20230718 16:09:53.591"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="4" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="2" fail="4" skip="0" id="s1" name="P2P">P2P</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Wallet">Wallet</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20230717 17:17:04.756" level="WARN">Multiple tests with name 'Navigate to P2P Page' executed in suite 'P2P'.</msg>
 </errors>
 </robot>

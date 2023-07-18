@@ -13,7 +13,7 @@ ${login_password}       //*[@class="wrapper"]/div/div/div[2]/form/div[2]/div/div
 ${login_button}         //*[@class="wrapper"]/div/div/div[2]/form/button
 ${profile_icon}         //*[@id="profile-button"]
 
-${p2p_link}             //*[@id="dark"]/header/div/div/div[1]/a[2]
+${p2p_link}             //a[text()="P2P Trader"]
 ${btc_filter}           //*[@id="dark"]/div[1]/div[1]/div/div/label[2]/span[1]/input
 ${contract_card}        //*[@id="dark"]/div[1]/div[2]/div[2]/div[1]/div
 ${buy_btn}              //button[contains(@class, 'MuiButton-textPrimary') and not(@disabled) and text() = 'BUY']
@@ -33,11 +33,12 @@ ${loading_price}        //div[contains(@style, 'fill: white; height: 20px; width
 ${coin_input}           (//*[@class="MuiInputBase-input MuiInput-input MuiInputBase-inputAdornedEnd css-1jhxu0"])[1]
 ${price_input}          (//*[@class="MuiInputBase-input MuiInput-input MuiInputBase-inputAdornedEnd css-1jhxu0"])[2]
 ${sell_btn_2}           //button[text()='SELL']
+${yes_proceed}          //button[text()="Yes"]  
 
 ${ongoing_btn}          //button[text()='On Going']
 ${eth_filter}           //*[@id="dark"]/div[1]/div[1]/div/div/label[1]
 ${btc_contract}         //div[contains(@class, 'MuiCard-root') and contains(@class, 'market-card')]//div[text()='BTC']
-${withdraw_btn}         (//button[text()='WITHDRAW'])[1]
+${withdraw_btn}         (//button[text()='Delete'])[1]
 
 
 
@@ -49,11 +50,12 @@ Login
     Wait Until Element Is Visible    ${logo}
     Click Element    ${login}
     Wait Until Element Is Visible    ${login_popup}
-    Input Text    ${login_email}    farhana@besquare.com.my
-    Input Password    ${login_password}    Test1234@
+    Input Text    ${login_email}    asyurajohane@gmail.com
+    Input Password    ${login_password}    Ikmal12!
     Click Element    ${login_button}
-    Wait Until Page Contains Element    ${close_btn}
+    Wait Until Page Contains Element    ${skip_btn}
     Click Element    ${skip_btn}
+    # Click Element    ${skip_btn}
 
 Navigate to P2P Page 
     Page Should Contain    P2P Trader
@@ -76,7 +78,7 @@ Navigate to P2P Transaction History
     Wait Until Page Contains Element    ${trans_table}    5
     Click Element    ${p2p_hist}
 
-Sell 3 BTC contract for 10000
+Sell 1 BTC contract for 10000
     Click Element    ${sell_btn}
     Wait Until Page Contains Element    ${contract_form}
     Click Element    ${currency_dropdown}
@@ -84,11 +86,14 @@ Sell 3 BTC contract for 10000
     Wait Until Page Does Not Contain Element    ${loading_price}    10
     Click Element    ${coin_input}
     Press Keys    ${coin_input}    CTRL+a+BACKSPACE
-    Input Text    ${coin_input}    3
+    Input Text    ${coin_input}    1
     Click Element    ${price_input}
     Press Keys    ${price_input}    CTRL+a+BACKSPACE
     Input Text    ${price_input}    10000
     Click Element    ${sell_btn_2}
+    Wait Until Element Is Visible    ${yes_proceed}
+    Sleep    1
+    Click Element    ${yes_proceed}
     Wait Until Page Contains Element    //div[text()='Contract added sucessfully']    5
 
 Navigate to Ongoing page 
@@ -103,7 +108,7 @@ Withdraw BTC contract
     Click Element    ${withdraw_btn}
     Wait Until Page Contains Element    ${alert_box}    5
     Click Element    ${yes_btn}
-    Wait Until Page Contains Element    //div[text()='Contract withdraw sucessfully']    5
+    Wait Until Page Contains Element    //div[text()='Contract deleted']    5
 
 *** Test Cases ***
 
@@ -118,7 +123,7 @@ Buy ETH Contract
 Sell BTC Contract 
     Login
     Navigate to P2P Page
-    Sell 3 BTC contract for 10000
+    Sell 1 BTC contract for 10000
     Navigate to Ongoing page
     Withdraw BTC contract
     Navigate to P2P Transaction History

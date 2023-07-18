@@ -1,6 +1,8 @@
 *** Settings ***
 Documentation  homepage
 Library    SeleniumLibrary
+Resource    p2p.robot
+Resource    homepage.robot
 
 *** Variables ***
 
@@ -160,4 +162,11 @@ Check Chart for ETH Candlestick For All Intervals
     Change to 1 Day
     Sleep    2
 
-
+Check Candle Chart at 1 Minute Interval
+    Go To Website
+    Change Chart to Candle
+    FOR    ${i}    IN RANGE    1    11
+        Change to 1 Minute
+        Change to 30 Minute
+        Sleep    0.5
+    END
