@@ -18,10 +18,10 @@ ${profile_button}    //*[text()="Profile"]
 ${wallet}    //*[@id="wallet"]
 ${deposit_dropdown}    //*[@role="listbox"]/button
 ${withdraw_dropdown}    //*[@role="listbox"]/button[2]
-${wallet_input}    //input[@inputmode="numeric"]
+${wallet_input}    (//input[@class="MuiInputBase-input MuiInput-input MuiInputBase-inputAdornedEnd css-1jhxu0"])[2]
 ${USD_opt}    //*[@role="listbox"]/li
-${add_icon}    //*[@class="deposit-input-box MuiBox-root css-0"]/button[2]
-${subtract_icon}    //*[@class="deposit-input-box MuiBox-root css-0"]/button[1]
+${add_icon}    (//*[@class="deposit-input-box MuiBox-root css-0"]/button[2])[2]
+${subtract_icon}    (//*[@class="deposit-input-box MuiBox-root css-0"]/button[1])[2]
 ${deposit_button}    //*[@class="deposit-form"]/button
 ${withdraw_button}    //*[@class="deposit-form"]/button
 ${error}    //p[text()="Amount must be a positive number"]
@@ -180,4 +180,3 @@ Verify if Add and Subtract Icon Is Able Increase and Decrease Amount
         Click Element    ${subtract_icon}
         Sleep    0.4
     END
-

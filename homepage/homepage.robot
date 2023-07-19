@@ -18,7 +18,7 @@ ${profile_button}    //*[text()="Profile"]
 ${wallet}    //*[@id="wallet"]
 ${deposit_dropdown}    //*[@role="listbox"]/button
 ${withdraw_dropdown}    //*[@role="listbox"]/button[2]
-${wallet_input}    //input[@inputmode="numeric"]
+${wallet_input}    //input[@id=":r9:"]
 ${USD_opt}    //*[@role="listbox"]/li
 ${deposit_button}    //*[@class="deposit-form"]/button
 ${withdraw_button}    //*[@class="deposit-form"]/button
@@ -43,17 +43,18 @@ ${BTC_currency}    //*[@data-value="BTC"]
 ${ETH_currency}    //*[@data-value="ETH"]
 ${buy_toggle}    //*[@class="buy-sell-toggle"]/button
 ${sell_toggle}    //*[@class="buy-sell-toggle"]/button[2]
-${amount_input}    //*[@class="amount"]/div/div/input
+${amount_input}    //input[@class="MuiInputBase-input MuiInput-input MuiInputBase-inputAdornedEnd css-1jhxu0"]
 ${buysell_button}    //*[@class="side-bar-input"]/button
+${yes_proceed}    //button[text()="Yes"]    
 
 #Transaction History Tab
 ${transaction_history_tab}    //*[@id="vertical-tab-0"]
 ${first_row_buy}    //td[2][text()="buy"]
 ${first_row_sell}    //td[2][text()="sell"]
-${first_row_BTC}    //td[3][text()="BTC"]
-${first_row_ETH}    //td[3][text()="ETH"]
+${first_row_BTC}    //*/tbody/tr[1]/td[3][text()="BTC"]
+${first_row_ETH}    //*/tbody/tr[1]/td[3][text()="ETH"]
 ${first_row_txn_amt}    //td[5][text()="10,000"]
-${first_row_coin_amt}    //td[4][text()="0.1"]
+${first_row_coin_amt}    //*/tbody/tr[1]/td[4][text()="1"]
 
 # Wallet History Tab
 ${wallet_history_tab}    //*[@id="vertical-tab-1"]
@@ -141,22 +142,42 @@ Buy 10000 USD worth of BTC
     Wait Until Element Is Visible    ${BTC_currency}
     Click Element    ${BTC_currency}
     Click Element    ${buy_toggle}
+    Wait Until Element Is Visible    ${amount_input}
     Input Text    ${amount_input}    10000
     Sleep    4
     Wait Until Element Is Enabled    ${buysell_button}
     Click Element    ${buysell_button}
+    Wait Until Element Is Visible    ${yes_proceed}
+    Click Element    ${yes_proceed}
     Wait Until Element Is Visible    ${successful_buy}
 
-Sell 0.1 BTC
+Buy 10000 USD worth of ETH
     Wait Until Page Contains Element    ${currency_dropdown}
     Click Element    ${currency_dropdown}
-    Wait Until Element Is Visible    ${BTC_currency}
-    Click Element    ${BTC_currency}
-    Click Element    ${sell_toggle}
-    Input Text    ${amount_input}    0.1
+    Wait Until Element Is Visible    ${ETH_currency}
+    Click Element    ${ETH_currency}
+    Click Element    ${buy_toggle}
+    Wait Until Element Is Visible    ${amount_input}
+    Input Text    ${amount_input}    10000
     Sleep    4
     Wait Until Element Is Enabled    ${buysell_button}
     Click Element    ${buysell_button}
+    Wait Until Element Is Visible    ${yes_proceed}
+    Click Element    ${yes_proceed}
+    Wait Until Element Is Visible    ${successful_buy}
+
+Sell 0.1 ETH
+    Wait Until Page Contains Element    ${currency_dropdown}
+    Click Element    ${currency_dropdown}
+    Wait Until Element Is Visible    ${ETH_currency}
+    Click Element    ${ETH_currency}
+    Click Element    ${sell_toggle}
+    Input Text    ${amount_input}    1
+    Sleep    4
+    Wait Until Element Is Enabled    ${buysell_button}
+    Click Element    ${buysell_button}
+    Wait Until Element Is Visible    ${yes_proceed}    
+    Click Element    ${yes_proceed}
     Wait Until Element Is Visible    ${successful_sell}
 
 
@@ -188,17 +209,17 @@ Buy 10000 USD worth of BTC and Check Transaction History
     Wait Until Element Is Visible    ${first_row_txn_amt}    10
     Sleep   4
 
-Sell 0.1 BTC and Check Transaction History
+Sell 1 ETH and Check Transaction History
     Go To Website
     Login with first password
     Deposit 10000 USD into Wallet
-    Buy 10000 USD worth of BTC
-    Sell 0.1 BTC
+    Buy 10000 USD worth of ETH
+    Sell 0.1 ETH
     To Profile Page
     Wait Until Element Is Visible    ${transaction_history_tab}
     Click Element    ${transaction_history_tab}
     Wait Until Element Is Visible    ${first_row_sell}    10
-    Wait Until Element Is Visible    ${first_row_BTC}    10
+    Wait Until Element Is Visible    ${first_row_ETH}    10
     Wait Until Element Is Visible    ${first_row_coin_amt}    10
     Sleep   4
 
