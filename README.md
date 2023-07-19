@@ -1,4 +1,4 @@
-# DRC_Automation
+# CRYPTHUB Automation Testing
 
 This repository contains automation scripts for Crypthub, a cryptocurrency trading platform for Besquare’s Developer’s Readiness Challenge (DRC) 2023. The link to the website is as follows: [Crypthub Website](https://crypthub-app.vercel.app/).
 
