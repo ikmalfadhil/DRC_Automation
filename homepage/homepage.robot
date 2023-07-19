@@ -175,28 +175,6 @@ Log Out
     Wait Until Element Is Visible    ${successful_logout}
     Sleep    4
 
-Deposit 10000 USD into Wallet and Check Wallet History
-    Go To Website
-    Login with first password
-    Deposit 10000 USD into Wallet
-    To Profile Page
-    Wait Until Element Is Enabled   ${wallet_history_tab}
-    Click Element    ${wallet_history_tab}
-    Wait Until Element Is Visible    ${first_row_deposit}
-    Wait Until Element Is Visible    ${first_row_wallet_txn}
-    Sleep    4
-
-Withdraw 10000 USD into Wallet and Check Wallet History
-    Go To Website
-    Login with first password
-    Withdraw 10000 USD out of Wallet
-    To Profile Page
-    Wait Until Element Is Enabled    ${wallet_history_tab}
-    Click Element    ${wallet_history_tab}
-    Wait Until Element Is Visible    ${first_row_withdraw}    10
-    Wait Until Element Is Visible    ${first_row_wallet_txn}    10
-    Sleep    4
-
 Buy 10000 USD worth of BTC and Check Transaction History
     Go To Website
     Login with first password
